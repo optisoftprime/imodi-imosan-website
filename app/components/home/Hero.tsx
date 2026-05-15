@@ -3,19 +3,6 @@ import logo from "@/assets/logo.png";
 import heroMockup from "@/public/images/branding/mobile-dashboard.png";
 import PlaceholderImg from "./PlaceholderImg";
 
-const navItems = [
-    { label: "Home", hasDropdown: false },
-    { label: "About Us", hasDropdown: true },
-    { label: "Accounts", hasDropdown: true },
-    { label: "Savings", hasDropdown: true },
-    { label: "Loans", hasDropdown: true },
-    { label: "Payments", hasDropdown: true },
-    { label: "RizeCoop", hasDropdown: true },
-    { label: "RizeSpring", hasDropdown: false },
-    { label: "Rewards", hasDropdown: true },
-    { label: "CSR", hasDropdown: true },
-];
-
 export default function HeroSection() {
     return (
         <div className="relative min-h-screen overflow-hidden bg-[#eaf0fb]">
