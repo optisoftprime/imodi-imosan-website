@@ -148,14 +148,13 @@
 //     </nav>
 //   );
 // }
+
 "use client";
 
 import { useState, useRef, useEffect, ReactNode } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { ChevronDown, Menu, X } from "lucide-react";
-
-// ─── Types ────────────────────────────────────────────────────────────────────
 
 interface DropdownItem {
   label: string;
@@ -170,8 +169,6 @@ interface NavItem {
   dropdown?: DropdownItem[];
   dropdownStyle?: "grid" | "list";
 }
-
-// ─── Icons ────────────────────────────────────────────────────────────────────
 
 const SalaryIcon = () => (
   <svg
@@ -236,8 +233,6 @@ const TermIcon = () => (
   </svg>
 );
 
-// ─── Nav Data ─────────────────────────────────────────────────────────────────
-
 const NAV_ITEMS: NavItem[] = [
   { label: "Home", href: "/" },
   {
@@ -248,7 +243,7 @@ const NAV_ITEMS: NavItem[] = [
         label: "Career",
         description:
           "Join our team and build a career with Imodi-Imosan Microfinance Bank.",
-        href: "#",
+        href: "/career",
         icon: <ConsumerIcon />,
       },
     ],
@@ -324,26 +319,32 @@ const NAV_ITEMS: NavItem[] = [
       {
         label: "Salary Advance",
         description: "Quick access to your salary before payday.",
-        href: "salary-advance",
+        href: "/salary-advance",
         icon: <SalaryIcon />,
       },
       {
         label: "Consumer Loan",
         description:
           "Personal loan solutions for your everyday needs and emergencies.",
-        href: "consumer-loan",
+        href: "/consumer-loan",
         icon: <ConsumerIcon />,
       },
       {
         label: "Business Loan",
         description: "Funding solutions designed to grow your business.",
-        href: "#",
+        href: "/business-loan",
+        icon: <BusinessIcon />,
+      },
+      {
+        label: "Agri-Business",
+        description: "Financial support tailored for agricultural businesses.",
+        href: "/agric-business",
         icon: <BusinessIcon />,
       },
       {
         label: "Term Loan",
         description: "Structured loan repayments over a fixed period.",
-        href: "#",
+        href: "/term-loan",
         icon: <TermIcon />,
       },
     ],
@@ -353,21 +354,10 @@ const NAV_ITEMS: NavItem[] = [
     dropdownStyle: "list",
     dropdown: [
       {
-        label: "Electricity",
-        href: "#",
-        description: "Pay your electricity bills quickly and securely.",
-        icon: <SalaryIcon />,
-      },
-      {
-        label: "Data",
-        href: "#",
-        description: "Purchase data bundles for all networks.",
-        icon: <SalaryIcon />,
-      },
-      {
-        label: "Airtime",
-        href: "#",
-        description: "Top up airtime for any network instantly.",
+        label: "Payments & Bills",
+        href: "/payment-and-bills",
+        description:
+          "Pay bills, airtime, data and electricity quickly and securely.",
         icon: <SalaryIcon />,
       },
     ],
@@ -391,38 +381,38 @@ const NAV_ITEMS: NavItem[] = [
       },
       {
         label: "RizeCoop Loan",
-        href: "#",
+        href: "/rizeCoop-plan",
         description: "Access loans through your cooperative standing.",
         icon: <SalaryIcon />,
       },
       {
         label: "Collateral Savings",
-        href: "#",
+        href: "/collateral-savings",
         description: "Use your savings as collateral for loan access.",
         icon: <SalaryIcon />,
       },
       {
         label: "Multiplier Loan",
-        href: "#",
+        href: "/multiplier-loan",
         description: "Grow your loan capacity through consistent savings.",
         icon: <SalaryIcon />,
       },
     ],
   },
-  { label: "RizeSpring", href: "#" },
+  { label: "RizeSpring", href: "/rize-spring" },
   {
     label: "Rewards",
     dropdownStyle: "list",
     dropdown: [
       {
         label: "Point-Based System",
-        href: "#",
+        href: "/rewards",
         description: "Earn points on every transaction and redeem for rewards.",
         icon: <SalaryIcon />,
       },
       {
         label: "Business Support",
-        href: "#",
+        href: "/business-report",
         description: "Get business support benefits as a loyal customer.",
         icon: <SalaryIcon />,
       },
@@ -434,7 +424,7 @@ const NAV_ITEMS: NavItem[] = [
     dropdown: [
       {
         label: "Community Support Through Donations and other Rewards",
-        href: "#",
+        href: "/csr",
         description:
           "We give back to the communities we serve through donations and impact programs.",
         icon: <SalaryIcon />,
@@ -442,8 +432,6 @@ const NAV_ITEMS: NavItem[] = [
     ],
   },
 ];
-
-// ─── Dropdown Panel ────────────────────────────────────────────────────────────
 
 interface DropdownPanelProps {
   items: DropdownItem[];
@@ -515,8 +503,6 @@ const DropdownPanel = ({ items, style, isOpen }: DropdownPanelProps) => (
   </div>
 );
 
-// ─── Desktop Nav Item ──────────────────────────────────────────────────────────
-
 interface DesktopNavItemProps {
   item: NavItem;
   isOpen: boolean;
@@ -572,8 +558,6 @@ const DesktopNavItem = ({
     </li>
   );
 };
-
-// ─── Mobile Nav ────────────────────────────────────────────────────────────────
 
 const MobileNav = ({ isOpen }: { isOpen: boolean }) => {
   const [openSubs, setOpenSubs] = useState<Record<string, boolean>>({});
@@ -634,8 +618,6 @@ const MobileNav = ({ isOpen }: { isOpen: boolean }) => {
   );
 };
 
-// ─── Main Navbar ───────────────────────────────────────────────────────────────
-
 export default function Navbar() {
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -686,7 +668,6 @@ export default function Navbar() {
           )}
         </button>
       </div>
-
       <MobileNav isOpen={mobileOpen} />
     </nav>
   );

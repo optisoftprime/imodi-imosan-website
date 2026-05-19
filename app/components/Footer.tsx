@@ -96,51 +96,53 @@
 //     );
 // }
 
-// components/Footer.tsx
-import Image from "next/image";
+// components/Footer.tsximport Image from "next/image";
+
 import Link from "next/link";
 import { MapPin, Phone } from "lucide-react";
 import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from "react-icons/fa";
+import Image from "next/image";
 
 const navLinks = [
   {
     title: "Accounts",
     items: [
-      { label: "Savings Account", href: "/savings" },
-      { label: "Current Account", href: "/create-account" },
-      { label: "SME", href: "sme" },
-      { label: "Cooperative & Thrift", href: "cooperative-thrift" },
-      { label: "Societies & Clubs", href: "societies-and-club" },
+      { label: "Savings Account",        href: "/savings"            },
+      { label: "Current Account",        href: "/create-account"     },
+      { label: "SME",                    href: "/sme"                },
+      { label: "Cooperative & Thrift",   href: "/cooperative-thrift" },
+      { label: "Societies & Clubs",      href: "/societies-and-club" },
+      { label: "Religious Organization", href: "/religious-page"     },
     ],
   },
   {
     title: "Loans",
     items: [
-      { label: "Personal Loans", href: "#" },
-      { label: "Business Loans", href: "#" },
-      { label: "Farmers Loans", href: "#" },
-      { label: "RizeCoop Loan", href: "#" },
-      { label: "Term Loan", href: "#" },
+      { label: "Salary Advance", href: "/salary-advance" },
+      { label: "Consumer Loan",  href: "/consumer-loan"  },
+      { label: "Business Loan",  href: "/business-loan"  },
+      { label: "Agri-Business",  href: "/agric-business" },
+      { label: "Term Loan",      href: "/term-loan"      },
     ],
   },
   {
     title: "Digital Banking",
     items: [
-      { label: "Internet Banking", href: "#" },
-      { label: "Transfers", href: "#" },
-      { label: "Bill Payments", href: "#" },
-      { label: "Airtime & Data", href: "#" },
-      { label: "Download RizeSpring", href: "#" },
+      { label: "Payments & Bills",          href: "/payment-and-bills"  },
+      { label: "Target Savings",            href: "/target-savings"     },
+      { label: "Create/Join Savings Group", href: "/saving-group"       },
+      { label: "Collateral Savings",        href: "/collateral-savings" },
+      { label: "Download RizeSpring",       href: "/rize-spring"        },
     ],
   },
   {
     title: "Company",
     items: [
-      { label: "About Us", href: "#" },
-      { label: "CSR", href: "#" },
-      { label: "Rewards Program", href: "#" },
-      { label: "Careers", href: "#" },
-      { label: "Contact Us", href: "#" },
+      { label: "Career",          href: "/career"     },
+      { label: "CSR",             href: "/csr"        },
+      { label: "Rewards Program", href: "/rewards"    },
+      { label: "Membership",      href: "/membership" },
+      { label: "Contact Us",      href: "#"           },
     ],
   },
 ];
@@ -149,23 +151,11 @@ export default function Footer() {
   return (
     <footer className="relative overflow-hidden bg-[#F4F4F4] text-[#667085]">
       <div className="pointer-events-none absolute right-0 top-0 z-0">
-        <Image
-          src="/images/ui/footer/footer-top-curve.png"
-          alt=""
-          width={280}
-          height={280}
-          className="w-[130px] sm:w-[140px] lg:w-[130px]"
-        />
+        <Image src="/images/ui/footer/footer-top-curve.png" alt="" width={280} height={280} className="w-[130px] sm:w-[140px] lg:w-[130px]" />
       </div>
 
       <div className="pointer-events-none absolute bottom-0 left-0 z-0">
-        <Image
-          src="/images/ui/footer/footer-curve-left.png"
-          alt=""
-          width={320}
-          height={320}
-          className="w-[130px] sm:w-[140px] lg:w-[130px]"
-        />
+        <Image src="/images/ui/footer/footer-curve-left.png" alt="" width={320} height={320} className="w-[130px] sm:w-[140px] lg:w-[130px]" />
       </div>
 
       <div className="relative z-10 mx-auto max-w-[1280px] px-6 pb-8 pt-16 sm:px-10 lg:px-12">
@@ -173,28 +163,19 @@ export default function Footer() {
           {/* Brand */}
           <div className="max-w-[340px]">
             <div className="mb-7 flex items-center gap-3">
-              <Image
-                src="/images/branding/logo.png"
-                alt="logo"
-                width={64}
-                height={52}
-              />
+              <Image src="/images/branding/logo.png" alt="logo" width={64} height={52} />
               <h2 className="text-[27.41px] font-extrabold leading-none tracking-[-0.02em] text-black">
                 IMODI-IMOSAN <span className="text-[#2563EB]">MFB</span>
               </h2>
             </div>
 
             <p className="mb-8 text-[16px] leading-[34px]">
-              Imodi-Imosan Microfinance Bank — helping individuals and
-              businesses grow with simple, secure, and trustworthy financial
-              services.
+              Imodi-Imosan Microfinance Bank — helping individuals and businesses grow with simple, secure, and trustworthy financial services.
             </p>
 
             <div className="mb-5 flex items-start gap-2">
               <MapPin size={16} className="mt-1 min-w-[22px]" />
-              <p className="text-[16px] leading-[34px]">
-                19, Market Street, Imodi, Ijebu, Ogun State Nigeria
-              </p>
+              <p className="text-[16px] leading-[34px]">19, Market Street, Imodi, Ijebu, Ogun State Nigeria</p>
             </div>
 
             <div className="flex items-center gap-2">
@@ -206,16 +187,11 @@ export default function Footer() {
           {/* Nav columns */}
           {navLinks.map((col) => (
             <div key={col.title}>
-              <h3 className="mb-8 text-[20px] font-bold text-black">
-                {col.title}
-              </h3>
+              <h3 className="mb-8 text-[20px] font-bold text-black">{col.title}</h3>
               <ul className="space-y-6">
                 {col.items.map((item) => (
                   <li key={item.label}>
-                    <Link
-                      href={item.href}
-                      className="text-[16px] transition hover:text-black"
-                    >
+                    <Link href={item.href} className="text-[16px] transition hover:text-black">
                       {item.label}
                     </Link>
                   </li>
@@ -229,34 +205,18 @@ export default function Footer() {
 
         <div className="flex flex-col gap-6 py-7 lg:flex-row lg:items-center lg:justify-between">
           <div className="flex flex-wrap items-center gap-8 text-[16px]">
-            <Link href="#" className="transition hover:text-black">
-              Privacy Policy
-            </Link>
-            <Link href="#" className="transition hover:text-black">
-              Cookie Policy
-            </Link>
-            <Link href="#" className="transition hover:text-black">
-              Legal
-            </Link>
+            <Link href="#" className="transition hover:text-black">Privacy Policy</Link>
+            <Link href="#" className="transition hover:text-black">Cookie Policy</Link>
+            <Link href="#" className="transition hover:text-black">Legal</Link>
           </div>
 
-          <p className="text-[16px]">
-            © 2026 Imodi-Imosan Micro Finance Bank. All rights reserved.
-          </p>
+          <p className="text-[16px]">© 2026 Imodi-Imosan Micro Finance Bank. All rights reserved.</p>
 
           <div className="flex items-center gap-6">
-            <Link href="#">
-              <FaTwitter size={22} className="transition hover:text-black" />
-            </Link>
-            <Link href="#">
-              <FaLinkedin size={22} className="transition hover:text-black" />
-            </Link>
-            <Link href="#">
-              <FaFacebook size={22} className="transition hover:text-black" />
-            </Link>
-            <Link href="#">
-              <FaInstagram size={22} className="transition hover:text-black" />
-            </Link>
+            <Link href="#"><FaTwitter size={22} className="transition hover:text-black" /></Link>
+            <Link href="#"><FaLinkedin size={22} className="transition hover:text-black" /></Link>
+            <Link href="#"><FaFacebook size={22} className="transition hover:text-black" /></Link>
+            <Link href="#"><FaInstagram size={22} className="transition hover:text-black" /></Link>
           </div>
         </div>
       </div>
