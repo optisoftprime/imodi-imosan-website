@@ -109,8 +109,8 @@ const navLinks = [
       { label: "Savings Account", href: "/savings" },
       { label: "Current Account", href: "/create-account" },
       { label: "SME", href: "sme" },
-      { label: "Cooperative & Thrift", href: "#" },
-      { label: "Societies & Clubs", href: "#" },
+      { label: "Cooperative & Thrift", href: "cooperative-thrift" },
+      { label: "Societies & Clubs", href: "societies-and-club" },
     ],
   },
   {

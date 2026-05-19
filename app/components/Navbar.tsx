@@ -148,10 +148,8 @@
 //     </nav>
 //   );
 // }
+"use client";
 
-"use client"
-
-// import { useState, useRef, useEffect } from "react";
 import { useState, useRef, useEffect, ReactNode } from "react";
 import Image from "next/image";
 import Link from "next/link";
@@ -176,14 +174,30 @@ interface NavItem {
 // ─── Icons ────────────────────────────────────────────────────────────────────
 
 const SalaryIcon = () => (
-  <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round">
+  <svg
+    className="w-6 h-6"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth={1.8}
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
     <circle cx="12" cy="8" r="4" />
     <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" />
   </svg>
 );
 
 const ConsumerIcon = () => (
-  <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round">
+  <svg
+    className="w-6 h-6"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth={1.8}
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
     <rect x="2" y="7" width="20" height="14" rx="2" />
     <path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2" />
     <line x1="12" y1="12" x2="12" y2="16" />
@@ -192,27 +206,33 @@ const ConsumerIcon = () => (
 );
 
 const BusinessIcon = () => (
-  <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round">
+  <svg
+    className="w-6 h-6"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth={1.8}
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
     <rect x="3" y="11" width="18" height="10" rx="2" />
     <path d="M7 11V7a5 5 0 0 1 10 0v4" />
   </svg>
 );
 
 const TermIcon = () => (
-  <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round">
+  <svg
+    className="w-6 h-6"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth={1.8}
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
     <rect x="3" y="11" width="18" height="10" rx="2" />
     <path d="M7 11V7a5 5 0 0 1 10 0v4" />
     <line x1="12" y1="14" x2="12" y2="18" />
-  </svg>
-);
-
-const FlameLogoIcon = () => (
-  <svg width="40" height="40" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <circle cx="40" cy="40" r="38" fill="#deeaf8" stroke="#b8d4ee" strokeWidth="2" />
-    <path d="M40 14 C32 24 24 30 26 42 C28 52 36 60 40 66 C44 60 52 52 54 42 C56 30 48 24 40 14Z" fill="#1565c0" opacity="0.18" />
-    <path d="M40 20 C34 29 28 35 30 44 C32 53 38 59 40 63 C42 59 48 53 50 44 C52 35 46 29 40 20Z" fill="#1976d2" opacity="0.45" />
-    <path d="M40 28 C36 35 33 40 35 47 C37 53 40 57 40 57 C40 57 43 53 45 47 C47 40 44 35 40 28Z" fill="#2196f3" />
-    <ellipse cx="37" cy="40" rx="3" ry="6" fill="white" opacity="0.5" transform="rotate(-15 37 40)" />
   </svg>
 );
 
@@ -224,74 +244,201 @@ const NAV_ITEMS: NavItem[] = [
     label: "About Us",
     dropdownStyle: "list",
     dropdown: [
-      { label: "Career", description: "We provide personal loan solutions to help you meet financial needs, handle emergencies, or invest in new opportunities with ease.", href: "/about", icon: <ConsumerIcon /> },
-      // { label: "Our Mission", href: "/about/mission" },
-      // { label: "Leadership", href: "/about/leadership" },
-      // { label: "Careers", href: "/about/careers" },
+      {
+        label: "Career",
+        description:
+          "Join our team and build a career with Imodi-Imosan Microfinance Bank.",
+        href: "#",
+        icon: <ConsumerIcon />,
+      },
     ],
   },
   {
     label: "Accounts",
     dropdownStyle: "grid",
     dropdown: [
-      { label: "Current Account", description: "Everyday banking for individuals and businesses with full flexibility.", href: "/accounts/current", icon: <ConsumerIcon /> },
-      { label: "Target Account", description: "Save towards a specific goal with discipline and transparency.", href: "/accounts/target", icon: <BusinessIcon /> },
+      {
+        label: "Savings Account",
+        description: "Flexible savings solutions to help you grow your money.",
+        href: "/savings",
+        icon: <BusinessIcon />,
+      },
+      {
+        label: "Current Account",
+        description:
+          "Everyday banking for individuals and businesses with full flexibility.",
+        href: "/create-account",
+        icon: <ConsumerIcon />,
+      },
+      {
+        label: "SME",
+        description: "Banking built for small and medium-sized businesses.",
+        href: "/sme",
+        icon: <BusinessIcon />,
+      },
+      {
+        label: "Cooperative & Thrift",
+        description: "Manage group savings and contributions with ease.",
+        href: "/cooperative-thrift",
+        icon: <ConsumerIcon />,
+      },
+      {
+        label: "Societies & Clubs",
+        description:
+          "Secure banking for associations, clubs and group organisations.",
+        href: "/societies-and-club",
+        icon: <ConsumerIcon />,
+      },
+      {
+        label: "Religious Organization",
+        description:
+          "Manage donations, offerings, and operational funds transparently.",
+        href: "/religious-page",
+        icon: <ConsumerIcon />,
+      },
     ],
   },
   {
     label: "Savings",
     dropdownStyle: "list",
     dropdown: [
-      { label: "Target Savings", description: "We provide personal loan solutions to help you meet financial needs, handle emergencies, or invest in new opportunities with ease.", href: "/savings/regular", icon: <BusinessIcon /> },
-      { label: "Create/Join a Savings Group", description: "We provide personal loan solutions to help you meet financial needs, handle emergencies, or invest in new opportunities with ease.", href: "/savings/fixed-deposit", icon: <BusinessIcon /> },
+      {
+        label: "Target Savings",
+        description:
+          "Save towards a specific goal with discipline and transparency.",
+        href: "/target-savings",
+        icon: <BusinessIcon />,
+      },
+      {
+        label: "Create/Join a Savings Group",
+        description: "Join or start a group savings plan with trusted members.",
+        href: "/saving-group",
+        icon: <BusinessIcon />,
+      },
     ],
   },
   {
     label: "Loans",
     dropdownStyle: "grid",
     dropdown: [
-      { label: "Salary Advance", description: "We provide personal loan solutions to help you meet financial needs, handle emergencies, or invest in new opportunities with ease.", href: "/loans/salary-advance", icon: <SalaryIcon /> },
-      { label: "Consumer Loan", description: "We provide personal loan solutions to help you meet financial needs, handle emergencies, or invest in new opportunities with ease.", href: "/loans/consumer", icon: <ConsumerIcon /> },
-      { label: "Business Loan", description: "We provide personal loan solutions to help you meet financial needs, handle emergencies, or invest in new opportunities with ease.", href: "/loans/business", icon: <BusinessIcon /> },
-      { label: "Term Loan", description: "We provide personal loan solutions to help you meet financial needs, handle emergencies, or invest in new opportunities with ease.", href: "/loans/term", icon: <TermIcon /> },
+      {
+        label: "Salary Advance",
+        description: "Quick access to your salary before payday.",
+        href: "salary-advance",
+        icon: <SalaryIcon />,
+      },
+      {
+        label: "Consumer Loan",
+        description:
+          "Personal loan solutions for your everyday needs and emergencies.",
+        href: "consumer-loan",
+        icon: <ConsumerIcon />,
+      },
+      {
+        label: "Business Loan",
+        description: "Funding solutions designed to grow your business.",
+        href: "#",
+        icon: <BusinessIcon />,
+      },
+      {
+        label: "Term Loan",
+        description: "Structured loan repayments over a fixed period.",
+        href: "#",
+        icon: <TermIcon />,
+      },
     ],
   },
   {
     label: "Payments",
     dropdownStyle: "list",
     dropdown: [
-      { label: "Electricity", href: "/payments/transfer", description: "We provide personal loan solutions to help you meet financial needs, handle emergencies, or invest in new opportunities with ease.", icon: <SalaryIcon /> },
-      { label: "Data", href: "/payments/bills", description: "We provide personal loan solutions to help you meet financial needs, handle emergencies, or invest in new opportunities with ease.", icon: <SalaryIcon /> },
-      { label: "Airtime", href: "/payments/airtime", description: "We provide personal loan solutions to help you meet financial needs, handle emergencies, or invest in new opportunities with ease.", icon: <SalaryIcon /> },
+      {
+        label: "Electricity",
+        href: "#",
+        description: "Pay your electricity bills quickly and securely.",
+        icon: <SalaryIcon />,
+      },
+      {
+        label: "Data",
+        href: "#",
+        description: "Purchase data bundles for all networks.",
+        icon: <SalaryIcon />,
+      },
+      {
+        label: "Airtime",
+        href: "#",
+        description: "Top up airtime for any network instantly.",
+        icon: <SalaryIcon />,
+      },
     ],
   },
   {
     label: "RizeCoop",
     dropdownStyle: "list",
     dropdown: [
-      { label: "Membership", href: "/rizecoop", description: "We provide personal loan solutions to help you meet financial needs, handle emergencies, or invest in new opportunities with ease.", icon: <SalaryIcon /> },
-      { label: "Cooperative & Thrifts", href: "/rizecoop/join", description: "We provide personal loan solutions to help you meet financial needs, handle emergencies, or invest in new opportunities with ease.", icon: <SalaryIcon /> },
-      { label: "RizeCoop Loan", href: "/rizecoop/contributions", description: "We provide personal loan solutions to help you meet financial needs, handle emergencies, or invest in new opportunities with ease.", icon: <SalaryIcon /> },
-      { label: "Collateral Savings", href: "/rizecoop/loans", description: "We provide personal loan solutions to help you meet financial needs, handle emergencies, or invest in new opportunities with ease.", icon: <SalaryIcon /> },
-      { label: "Multiplier Loan", href: "/rizecoop/loans", description: "We provide personal loan solutions to help you meet financial needs, handle emergencies, or invest in new opportunities with ease.", icon: <SalaryIcon /> },
-
+      {
+        label: "Membership",
+        href: "/membership",
+        description:
+          "Become a member and access cooperative financial benefits.",
+        icon: <SalaryIcon />,
+      },
+      {
+        label: "Cooperative & Thrift",
+        href: "/cooperative-thrift",
+        description: "Manage collective savings and thrift contributions.",
+        icon: <SalaryIcon />,
+      },
+      {
+        label: "RizeCoop Loan",
+        href: "#",
+        description: "Access loans through your cooperative standing.",
+        icon: <SalaryIcon />,
+      },
+      {
+        label: "Collateral Savings",
+        href: "#",
+        description: "Use your savings as collateral for loan access.",
+        icon: <SalaryIcon />,
+      },
+      {
+        label: "Multiplier Loan",
+        href: "#",
+        description: "Grow your loan capacity through consistent savings.",
+        icon: <SalaryIcon />,
+      },
     ],
   },
-  { label: "RizeSpring", href: "/rizespring" },
+  { label: "RizeSpring", href: "#" },
   {
     label: "Rewards",
     dropdownStyle: "list",
     dropdown: [
-      { label: "Point-Based System", href: "/rewards", description: "We provide personal loan solutions to help you meet financial needs, handle emergencies, or invest in new opportunities with ease.", icon: <SalaryIcon /> },
-      { label: "Business Support", href: "/rewards/referrals", description: "We provide personal loan solutions to help you meet financial needs, handle emergencies, or invest in new opportunities with ease.", icon: <SalaryIcon /> },
+      {
+        label: "Point-Based System",
+        href: "#",
+        description: "Earn points on every transaction and redeem for rewards.",
+        icon: <SalaryIcon />,
+      },
+      {
+        label: "Business Support",
+        href: "#",
+        description: "Get business support benefits as a loyal customer.",
+        icon: <SalaryIcon />,
+      },
     ],
   },
   {
     label: "CSR",
     dropdownStyle: "list",
     dropdown: [
-      { label: "Community Support Through Donations and other Rewards", href: "/csr/community", description: "We provide personal loan solutions to help you meet financial needs, handle emergencies, or invest in new opportunities with ease.", icon: <SalaryIcon /> },
-
+      {
+        label: "Community Support Through Donations and other Rewards",
+        href: "#",
+        description:
+          "We give back to the communities we serve through donations and impact programs.",
+        icon: <SalaryIcon />,
+      },
     ],
   },
 ];
@@ -304,71 +451,69 @@ interface DropdownPanelProps {
   isOpen: boolean;
 }
 
-const DropdownPanel = ({ items, style, isOpen }: DropdownPanelProps) => {
-  return (
-    <div
-      className={[
-        "absolute top-full left-1/2 -translate-x-1/2 bg-white rounded-xl shadow-xl z-50",
-        "transition-all duration-200 origin-top",
-        isOpen ? "opacity-100 translate-y-0 pointer-events-auto" : "opacity-0 -translate-y-2 pointer-events-none",
-        style === "grid" ? "min-w-[860px] p-7" : "min-w-[400px] p-7",
-      ].join(" ")}
-      style={{ boxShadow: "0 8px 40px rgba(13,42,78,0.14)" }}
-    >
-      {style === "grid" ? (
-        <div className="grid grid-cols-2 gap-x-10 gap-y-6">
-          {items.map((item) => (
-            <Link key={item.href} href={item.href} className="flex items-start gap-3 group">
-              <span className="flex-shrink-0 w-9 h-9 flex items-center justify-center text-[#2196f3] mt-0.5">
-                {item.icon}
-              </span>
-              <span>
-                <p className="text-sm font-extrabold text-[#0d2a4e] mb-1 group-hover:text-[#2196f3] transition-colors">
-                  {item.label}
+const DropdownPanel = ({ items, style, isOpen }: DropdownPanelProps) => (
+  <div
+    className={[
+      "absolute top-full left-1/2 -translate-x-1/2 bg-white rounded-xl shadow-xl z-50",
+      "transition-all duration-200 origin-top",
+      isOpen
+        ? "opacity-100 translate-y-0 pointer-events-auto"
+        : "opacity-0 -translate-y-2 pointer-events-none",
+      style === "grid" ? "min-w-[860px] p-7" : "min-w-[400px] p-7",
+    ].join(" ")}
+    style={{ boxShadow: "0 8px 40px rgba(13,42,78,0.14)" }}
+  >
+    {style === "grid" ? (
+      <div className="grid grid-cols-2 gap-x-10 gap-y-6">
+        {items.map((item) => (
+          <Link
+            key={item.label}
+            href={item.href}
+            className="flex items-start gap-3 group"
+          >
+            <span className="flex-shrink-0 w-9 h-9 flex items-center justify-center text-[#2196f3] mt-0.5">
+              {item.icon}
+            </span>
+            <span>
+              <p className="text-sm font-extrabold text-[#0d2a4e] mb-1 group-hover:text-[#2196f3] transition-colors">
+                {item.label}
+              </p>
+              {item.description && (
+                <p className="text-sm text-[#555e6e] leading-relaxed max-w-[300px]">
+                  {item.description}
                 </p>
-                {item.description && (
-                  <p className="text-sm text-[#555e6e] leading-relaxed max-w-[300px]">
-                    {item.description}
-                  </p>
-                )}
-              </span>
-            </Link>
-          ))}
-        </div>
-      ) : (
-        <div className="flex flex-col gap-y-6 pt-4">
-          {items.map((item, i) => (
-            <Link key={item.href} href={item.href} className="flex items-start gap-3 group">
-              <span className="flex-shrink-0 w-9 h-9 flex items-center justify-center text-[#2196f3] mt-0.5">
-                {item.icon}
-              </span>
-              <span>
-                <p className="text-sm font-extrabold text-[#0d2a4e] mb-1 group-hover:text-[#2196f3] transition-colors">
-                  {item.label}
+              )}
+            </span>
+          </Link>
+        ))}
+      </div>
+    ) : (
+      <div className="flex flex-col gap-y-6 pt-4">
+        {items.map((item) => (
+          <Link
+            key={item.label}
+            href={item.href}
+            className="flex items-start gap-3 group"
+          >
+            <span className="flex-shrink-0 w-9 h-9 flex items-center justify-center text-[#2196f3] mt-0.5">
+              {item.icon}
+            </span>
+            <span>
+              <p className="text-sm font-extrabold text-[#0d2a4e] mb-1 group-hover:text-[#2196f3] transition-colors">
+                {item.label}
+              </p>
+              {item.description && (
+                <p className="text-sm text-[#555e6e] leading-relaxed max-w-[300px]">
+                  {item.description}
                 </p>
-                {item.description && (
-                  <p className="text-sm text-[#555e6e] leading-relaxed max-w-[300px]">
-                    {item.description}
-                  </p>
-                )}
-              </span>
-            </Link>
-            // <Link
-            //   key={item.href}
-            //   href={item.href}
-            //   className={[
-            //     "py-2.5 px-2 text-sm font-bold text-[#1a2942] hover:text-[#2196f3] transition-colors",
-            //     i < items.length - 1 ? "border-b border-[#f0f3f8]" : "",
-            //   ].join(" ")}
-            // >
-            //   {item.label}
-            // </Link>
-          ))}
-        </div>
-      )}
-    </div>
-  );
-};
+              )}
+            </span>
+          </Link>
+        ))}
+      </div>
+    )}
+  </div>
+);
 
 // ─── Desktop Nav Item ──────────────────────────────────────────────────────────
 
@@ -379,14 +524,17 @@ interface DesktopNavItemProps {
   onClose: () => void;
 }
 
-const DesktopNavItem = ({ item, isOpen, onToggle, onClose }: DesktopNavItemProps) => {
+const DesktopNavItem = ({
+  item,
+  isOpen,
+  onToggle,
+  onClose,
+}: DesktopNavItemProps) => {
   const ref = useRef<HTMLLIElement>(null);
 
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
-      if (ref.current && !ref.current.contains(e.target as Node)) {
-        onClose();
-      }
+      if (ref.current && !ref.current.contains(e.target as Node)) onClose();
     };
     if (isOpen) document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
@@ -427,13 +575,8 @@ const DesktopNavItem = ({ item, isOpen, onToggle, onClose }: DesktopNavItemProps
 
 // ─── Mobile Nav ────────────────────────────────────────────────────────────────
 
-interface MobileNavProps {
-  isOpen: boolean;
-}
-
-const MobileNav = ({ isOpen }: MobileNavProps) => {
+const MobileNav = ({ isOpen }: { isOpen: boolean }) => {
   const [openSubs, setOpenSubs] = useState<Record<string, boolean>>({});
-
   const toggleSub = (label: string) =>
     setOpenSubs((prev) => ({ ...prev, [label]: !prev[label] }));
 
@@ -441,7 +584,9 @@ const MobileNav = ({ isOpen }: MobileNavProps) => {
     <div
       className={[
         "lg:hidden border-t border-[#e8eef8] bg-white overflow-y-auto transition-all duration-300",
-        isOpen ? "max-h-[80vh] opacity-100" : "max-h-0 opacity-0 pointer-events-none",
+        isOpen
+          ? "max-h-[80vh] opacity-100"
+          : "max-h-0 opacity-0 pointer-events-none",
       ].join(" ")}
     >
       <nav className="flex flex-col py-2">
@@ -465,7 +610,7 @@ const MobileNav = ({ isOpen }: MobileNavProps) => {
               >
                 {item.dropdown.map((sub) => (
                   <Link
-                    key={sub.href}
+                    key={sub.label}
                     href={sub.href}
                     className="block px-10 py-2.5 text-sm font-semibold text-[#1a2942] hover:text-[#2196f3] transition-colors"
                   >
@@ -482,7 +627,7 @@ const MobileNav = ({ isOpen }: MobileNavProps) => {
             >
               {item.label}
             </Link>
-          )
+          ),
         )}
       </nav>
     </div>
@@ -491,62 +636,32 @@ const MobileNav = ({ isOpen }: MobileNavProps) => {
 
 // ─── Main Navbar ───────────────────────────────────────────────────────────────
 
-
 export default function Navbar() {
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const [mobileOpen, setMobileOpen] = useState(false);
 
   const toggle = (label: string) =>
     setOpenDropdown((prev) => (prev === label ? null : label));
-
   const close = () => setOpenDropdown(null);
 
   return (
-    <nav className="sticky top-0 z-50 bg-[#B6CCFF]" style={{ boxShadow: "0 4px 24px rgba(13,42,78,0.10)" }}>
-      {/* Desktop bar */}
+    <nav
+      className="sticky top-0 z-50 bg-[#B6CCFF]"
+      style={{ boxShadow: "0 4px 24px rgba(13,42,78,0.10)" }}
+    >
       <div className="max-w-[1280px] mx-auto flex items-center h-16 px-7">
-        {/* Logo */}
-        {/* <Link href="/" className="flex items-center gap-2.5 flex-shrink-0 mr-8 no-underline">
+        <div className="flex items-center gap-3">
           <Image
             src="/images/branding/logo.png"
-            alt="design"
-            width={280}
-            height={280}
-            className="w-[130px] sm:w-[140px] lg:w-[130px]"
-          />
-          <span
-            className="text-[1.08rem] font-extrabold text-[#0d2a4e] tracking-wide leading-tight"
-            style={{ fontFamily: "'Nunito', sans-serif" }}
-          >
-            IMODI-IMOSAN{" "}
-            <span className="text-[#2196f3]">MFB</span>
-          </span>
-        </Link> */}
-        <div className=" flex items-center gap-3">
-          <Image
-            src="/images/branding/logo.png"
-
             alt="logo"
             width={64}
             height={52}
           />
-
           <h2 className="text-xl font-extrabold leading-none tracking-[-0.02em] text-black">
-            IMODI-IMOSAN{" "}
-            <span className="text-[#2563EB]">MFB</span>
+            IMODI-IMOSAN <span className="text-[#2563EB]">MFB</span>
           </h2>
         </div>
 
-        {/* <div className="pointer-events-none absolute right-0 top-0 z-0">
-                        <Image
-                            src="/images/ui/footer/footer-top-curve.png"
-                            alt="design"
-                            width={280}
-                            height={280}
-                            className="w-[130px] sm:w-[140px] lg:w-[130px]"
-                        />
-                    </div> */}
-        {/* Desktop links */}
         <ul className="hidden lg:flex items-center flex-1 list-none gap-0 m-0 p-0">
           {NAV_ITEMS.map((item) => (
             <DesktopNavItem
@@ -559,17 +674,19 @@ export default function Navbar() {
           ))}
         </ul>
 
-        {/* Hamburger */}
         <button
           className="lg:hidden ml-auto p-1.5 text-[#0d2a4e] bg-transparent border-none cursor-pointer"
           aria-label={mobileOpen ? "Close menu" : "Open menu"}
           onClick={() => setMobileOpen((v) => !v)}
         >
-          {mobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          {mobileOpen ? (
+            <X className="w-6 h-6" />
+          ) : (
+            <Menu className="w-6 h-6" />
+          )}
         </button>
       </div>
 
-      {/* Mobile nav */}
       <MobileNav isOpen={mobileOpen} />
     </nav>
   );

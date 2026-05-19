@@ -77,7 +77,6 @@ export default function RootLayout({
             <div className="relative overflow-hidden">
               {/* Background Glow */}
               {/* <div className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-56 bg-[#e5f8f9] blur-3xl" /> */}
-
               {/* Page Content */}
               {children}
             </div>
