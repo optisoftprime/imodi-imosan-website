@@ -57,12 +57,6 @@ export function RizeCoopLoanFeatureSection() {
     </section>
   );
 }
-
-/* ═══════════════════════════════════════════
-   SECTION 2 — SAVE TODAY, ACCESS TWICE AS MUCH TOMORROW
-   Centered heading + TRUE full-screen-width banner photo
-   (no max-width container, bleeds edge to edge)
-═══════════════════════════════════════════ */
 export function RizeCoopLoanBannerSection() {
   return (
     <section className="bg-white pb-0">
