@@ -5,6 +5,8 @@ import { RizeCoopLoanFeatureSection, RizeCoopLoanBannerSection } from "@/app/com
 
 import rizeCoopBg from "@/public/images/branding/Rectangle 2.png"; 
 
+
+// This is the rize coop loan page
 export default function RizeCoopLoanPage() {
   return (
     <main className="min-h-screen">
