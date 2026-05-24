@@ -9,6 +9,7 @@ interface PageHeroProps {
   title?: string;
   subtitle?: string;
   buttonText?: string;
+  buttonText2?: string;
   onButtonClick?: () => void;
   watermarkLines?: [string, string, string];
   showSlashes?: boolean;
@@ -21,6 +22,7 @@ export function PageHero({
   title = "Savings Account",
   subtitle = "We provide secure and flexible savings solutions designed to help you grow your money, plan for the future, and achieve your financial goals with confidence.",
   buttonText = "Start Saving Now",
+  buttonText2 = "",
   onButtonClick,
   watermarkLines = ["LOVE", "MONEY", "GROW"],
   showSlashes = true,

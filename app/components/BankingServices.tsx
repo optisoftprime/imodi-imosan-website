@@ -196,27 +196,27 @@ export default function BankingServices() {
 
                         {/* Top-left avatar */}
                         <div className="absolute" style={{ top: "4%", left: "8%" }}>
-                            <PlaceholderImg width={64} height={64} rounded="rounded-xl" label="Customer" />
+                            <PlaceholderImg src="" width={64} height={64} rounded="rounded-xl" label="Customer" />
                         </div>
 
                         {/* Top-right avatar */}
                         <div className="absolute" style={{ top: "4%", right: "8%" }}>
-                            <PlaceholderImg width={64} height={64} rounded="rounded-xl" label="Customer" />
+                            <PlaceholderImg src="" width={64} height={64} rounded="rounded-xl" label="Customer" />
                         </div>
 
                         {/* Bottom-left avatar */}
                         <div className="absolute" style={{ bottom: "4%", left: "18%" }}>
-                            <PlaceholderImg width={64} height={64} rounded="rounded-xl" label="Customer" />
+                            <PlaceholderImg src="" width={64} height={64} rounded="rounded-xl" label="Customer" />
                         </div>
 
                         {/* Bottom-center avatar */}
                         <div className="absolute" style={{ bottom: "0%", left: "50%", transform: "translateX(-50%)" }}>
-                            <PlaceholderImg width={64} height={64} rounded="rounded-xl" label="Customer" />
+                            <PlaceholderImg src="" width={64} height={64} rounded="rounded-xl" label="Customer" />
                         </div>
 
                         {/* Bottom-right avatar */}
                         <div className="absolute" style={{ bottom: "4%", right: "18%" }}>
-                            <PlaceholderImg width={64} height={64} rounded="rounded-xl" label="Customer" />
+                            <PlaceholderImg src="" width={64} height={64} rounded="rounded-xl" label="Customer" />
                         </div>
 
                         {/* Dashed connector lines (SVG overlay) */}
