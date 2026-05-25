@@ -3,7 +3,7 @@ import { PageCTA } from "@/app/components/pageCta";
 import { PageHero } from "@/app/components/pageHero";
 import { SavingsGroupFeatureSection, SavingsGroupPowerhouseSection } from "@/app/components/savings-group-sections";
 
-import groupBg from "@/public/images/branding/Rectangle 2.png";
+import groupBg from "@/public/images/branding/group bg.png";
 
 export default function SavingsGroupPage() {
   return (

@@ -3,7 +3,7 @@ import { PageCTA } from "@/app/components/pageCta";
 import { PageHero } from "@/app/components/pageHero";
 import { TermLoanFeatureSection, TermLoanFeaturesSection } from "@/app/components/term-loan-sections";
 
-import termBg from "@/public/images/branding/Rectangle 2.png"; // swap when available
+import termBg from "@/public/images/branding/term bg.png"; // swap when available
 
 export default function TermLoanPage() {
   return (

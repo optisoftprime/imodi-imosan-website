@@ -3,7 +3,7 @@ import { PageCTA } from "@/app/components/pageCta";
 import { PageHero } from "@/app/components/pageHero";
 import { AgriBizFeatureSection, AgriBizGallerySection } from "@/app/components/agri-biz-sections";
 
-import agriBg from "@/public/images/branding/Rectangle 2.png"; // swap when available
+import agriBg from "@/public/images/branding/agric bg.png"; // swap when available
 
 export default function AgriBizPage() {
   return (

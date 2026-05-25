@@ -3,7 +3,7 @@ import { PageCTA } from "@/app/components/pageCta";
 import { PageHero } from "@/app/components/pageHero";
 import { SocietiesFeatureSection } from "@/app/components/societies-sections";
 
-import societiesBg from "@/public/images/branding/Rectangle 2.png"; // swap when available
+import societiesBg from "@/public/images/branding/page bg.png"; // swap when available
 
 export default function SocietiesPage() {
   return (

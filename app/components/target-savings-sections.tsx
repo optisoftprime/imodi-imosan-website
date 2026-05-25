@@ -2,29 +2,29 @@
 import { ChevronRight } from "lucide-react";
 import Image from "next/image";
 
-import rect26 from "@/public/images/branding/Rectangle 26.png";
-import rect27 from "@/public/images/branding/Rectangle 27.png";
+import targetImg1 from "@/public/images/branding/target image 1.png";
+import targetImg2 from "@/public/images/branding/target image 2.png";
+import targetImg3 from "@/public/images/branding/target image 3.png";
+import targetImg4 from "@/public/images/branding/target image 4.png";
 
-/* ═══════════════════════════════════════════
-   SECTION 1 — SAVE WITH A PURPOSE
-   Left: 2x2 photo grid | Right: text
-═══════════════════════════════════════════ */
 export function TargetSavingsFeatureSection() {
   return (
     <section className="relative overflow-hidden bg-white px-8 py-20">
       <div className="relative mx-auto grid max-w-[1200px] grid-cols-1 items-center gap-16 lg:grid-cols-2">
-        {/* Left — 2x2 rounded photo grid */}
+        {/* Left — 2x2 photo grid, no border radius */}
         <div className="grid grid-cols-2 gap-3">
-          {[rect26, rect27, rect27, rect26].map((img, i) => (
-            <div
-              key={i}
-              className="overflow-hidden rounded-2xl shadow-md"
-              style={{ height: 160 }}
-            >
-              {/* swap with actual target savings photos */}
-              <Image src={img} alt="Savings" fill className="object-cover" />
-            </div>
-          ))}
+          <div style={{ height: 160 }}>
+            <Image src={targetImg3} alt="Savings" width={300} height={160} className="h-full w-full object-cover" />
+          </div>
+          <div style={{ height: 160 }}>
+            <Image src={targetImg2} alt="Savings" width={300} height={160} className="h-full w-full object-cover" />
+          </div>
+          <div style={{ height: 160 }}>
+            <Image src={targetImg1} alt="Savings" width={300} height={160} className="h-full w-full object-cover" />
+          </div>
+          <div style={{ height: 160 }}>
+            <Image src={targetImg4} alt="Savings" width={300} height={160} className="h-full w-full object-cover" />
+          </div>
         </div>
 
         {/* Right — text */}
@@ -100,18 +100,10 @@ export function TargetSavingsStepsSection() {
           "linear-gradient(135deg, #0a1a6e 0%, #0d2fa8 40%, #1a5fd4 100%)",
       }}
     >
-      {/* Subtle dot pattern */}
       <div className="pointer-events-none absolute inset-0 opacity-[0.04]">
         <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
           <defs>
-            <pattern
-              id="dots"
-              x="0"
-              y="0"
-              width="30"
-              height="30"
-              patternUnits="userSpaceOnUse"
-            >
+            <pattern id="dots" x="0" y="0" width="30" height="30" patternUnits="userSpaceOnUse">
               <circle cx="3" cy="3" r="2" fill="white" />
             </pattern>
           </defs>

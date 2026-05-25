@@ -2,8 +2,8 @@
 import { ChevronRight } from "lucide-react";
 import Image from "next/image";
 
-import rect26 from "@/public/images/branding/Rectangle 26.png";
-import rect27 from "@/public/images/branding/Rectangle 27.png";
+import socImage1 from "@/public/images/branding/soc image 1.png";
+import socImage2 from "@/public/images/branding/soc image 2.png";
 
 // Two overlapping photos layout matching the screenshot
 export function SocietiesFeatureSection() {
@@ -14,13 +14,11 @@ export function SocietiesFeatureSection() {
         <div className="relative h-[380px]">
           {/* Large photo — top right */}
           <div className="absolute right-0 top-0 overflow-hidden rounded-2xl shadow-lg" style={{ width: 260, height: 280 }}>
-            {/* swap with actual societies photo */}
-            <Image src={rect26} alt="Group celebrating" fill className="object-cover" />
+            <Image src={socImage1} alt="Group celebrating" fill className="object-cover" />
           </div>
           {/* Small photo — bottom left */}
           <div className="absolute bottom-0 left-0 overflow-hidden rounded-2xl shadow-2xl" style={{ width: 200, height: 220 }}>
-            {/* swap with actual societies photo */}
-            <Image src={rect27} alt="Group together" fill className="object-cover" />
+            <Image src={socImage2} alt="Group together" fill className="object-cover" />
           </div>
         </div>
 

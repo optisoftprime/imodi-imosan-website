@@ -3,7 +3,7 @@ import { PageCTA } from "@/app/components/pageCta";
 import { PageHero } from "@/app/components/pageHero";
 import { SmeFeatureSection, SmeOpportunitiesSection } from "../../components/sme-sections";
 
-import smeBg from "@/public/images/branding/Rectangle 2.png"; // swap when available
+import smeBg from "@/public/images/branding/bg image 2.png"; // swap when available
 
 export default function SmePage() {
   return (

@@ -2,7 +2,8 @@
 import { ChevronRight } from "lucide-react";
 import Image from "next/image";
 
-import rect26 from "@/public/images/branding/Rectangle 26.png";
+import rect26 from "@/public/images/branding/salary image.png";
+import chartImg from "@/public/images/branding/image 30.png";
 
 /* ═══════════════════════════════════════════
    SECTION 1 — DON'T WAIT FOR PAY DAY
@@ -84,7 +85,7 @@ export function SalaryAdvanceFeaturesSection() {
               className="flex flex-col items-center gap-4 rounded-2xl px-6 py-8 text-center shadow-md transition hover:-translate-y-0.5 hover:shadow-lg"
               style={{ background: f.dark ? "#0a1f44" : "white" }}
             >
-              <FeatureIcon dark={f.dark} />
+              <Image src={chartImg} dark={f.dark} />
               <p className={`text-[13.5px] font-semibold leading-snug ${f.dark ? "text-white" : "text-[#0a1f44]"}`}>
                 {f.label}
               </p>

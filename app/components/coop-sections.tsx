@@ -1,20 +1,43 @@
 "use client";
 import { ChevronRight } from "lucide-react";
 import Image from "next/image";
+import { StaticImageData } from "next/image";
 
-import rect26 from "@/public/images/branding/Rectangle 26.png";
-import rect27 from "@/public/images/branding/Rectangle 27.png";
+import womanHoldingFruit from "@/public/images/branding/woman-holding-fruit.png";
+import image30 from "@/public/images/branding/image 30.png";
+
+import ellipse329 from "@/public/images/branding/Ellipse 329.png";
+import ellipse330 from "@/public/images/branding/Ellipse 330.png";
+import ellipse331 from "@/public/images/branding/Ellipse 331.png";
+import ellipse332 from "@/public/images/branding/Ellipse 332.png";
+import ellipse333 from "@/public/images/branding/Ellipse 333.png";
+import ellipse334 from "@/public/images/branding/Ellipse 334.png";
+import ellipse335 from "@/public/images/branding/Ellipse 335.png";
+import ellipse336 from "@/public/images/branding/Ellipse 336.png";
+import ellipse338 from "@/public/images/branding/Ellipse 338.png";
 
 /* ═══════════════════════════════════════════
    SECTION 1 — WHEN WE SAVE TOGETHER
    Cluster is 3 staggered rows on the right
 ═══════════════════════════════════════════ */
 
-// Row 1: 2 circles | Row 2: 3 circles | Row 3: 3 circles + 1 offset right
-const clusterRows = [
-  [{ size: 90 }, { size: 76 }],
-  [{ size: 80 }, { size: 96 }, { size: 82 }],
-  [{ size: 78 }, { size: 84 }, { size: 72 }, { size: 80 }],
+// Row 1: 2 circles | Row 2: 3 circles | Row 3: 4 circles
+const clusterRows: { size: number; src: StaticImageData; alt: string }[][] = [
+  [
+    { size: 90, src: ellipse338, alt: "Member" },
+    { size: 76, src: ellipse336, alt: "Member" },
+  ],
+  [
+    { size: 80, src: ellipse334, alt: "Member" },
+    { size: 96, src: ellipse335, alt: "Member" },
+    { size: 82, src: ellipse333, alt: "Member" },
+  ],
+  [
+    { size: 78, src: ellipse332, alt: "Member" },
+    { size: 84, src: ellipse330, alt: "Member" },
+    { size: 72, src: ellipse331, alt: "Member" },
+    { size: 80, src: ellipse329, alt: "Member" },
+  ],
 ];
 
 export function CoopSaveTogetherSection() {
@@ -53,7 +76,7 @@ export function CoopSaveTogetherSection() {
             <div
               key={ri}
               className="flex items-center gap-3"
-              style={{ marginLeft: ri === 0 ? 40 : ri === 2 ? 0 : 0 }}
+              style={{ marginLeft: ri === 0 ? 40 : 0 }}
             >
               {row.map((c, ci) => (
                 <div
@@ -61,8 +84,13 @@ export function CoopSaveTogetherSection() {
                   className="overflow-hidden rounded-full border-2 border-white shadow-md flex-shrink-0"
                   style={{ width: c.size, height: c.size }}
                 >
-                  {/* swap rect26 with individual member photos when available */}
-                  <Image src={rect26} alt="Member" width={c.size} height={c.size} className="object-cover h-full w-full" />
+                  <Image
+                    src={c.src}
+                    alt={c.alt}
+                    width={c.size}
+                    height={c.size}
+                    className="object-cover h-full w-full"
+                  />
                 </div>
               ))}
             </div>
@@ -76,18 +104,6 @@ export function CoopSaveTogetherSection() {
 /* ═══════════════════════════════════════════
    SECTION 2 — FEATURES GRID + HEADLINE + IMAGE
 ═══════════════════════════════════════════ */
-
-function FeatureCardIcon() {
-  return (
-    <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <rect x="5"  y="26" width="8" height="13" rx="1.5" fill="#1a5fd4" />
-      <rect x="18" y="18" width="8" height="21" rx="1.5" fill="#1a5fd4" />
-      <rect x="31" y="10" width="8" height="29" rx="1.5" fill="#1a5fd4" />
-      <polyline points="9,26 22,18 35,10" stroke="#f59e0b" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" fill="none" />
-      <circle cx="35" cy="10" r="3" fill="#f59e0b" />
-    </svg>
-  );
-}
 
 const coopFeatures = [
   "Secure Group Savings",
@@ -107,7 +123,9 @@ export function CoopFeaturesSection() {
               key={title}
               className="flex flex-col items-center gap-4 rounded-2xl bg-[#f8faff] p-8 text-center shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
             >
-              <FeatureCardIcon />
+              <div className="relative h-11 w-11">
+                <Image src={image30} alt="Feature icon" fill className="object-contain" />
+              </div>
               <p className="text-[14px] font-semibold leading-snug text-[#0a1f44]">{title}</p>
             </div>
           ))}
@@ -119,8 +137,7 @@ export function CoopFeaturesSection() {
             We Provide Secure Banking Solutions To Help Cooperatives Manage Funds
           </h2>
           <div className="relative mt-8 h-[260px] w-full overflow-hidden rounded-2xl shadow-xl">
-            {/* swap rect27 with actual cooperative photo when available */}
-            <Image src={rect27} alt="Cooperative banking" fill className="object-cover" />
+            <Image src={womanHoldingFruit} alt="Cooperative banking" fill className="object-cover" />
           </div>
         </div>
       </div>

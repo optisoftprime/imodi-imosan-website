@@ -3,7 +3,7 @@ import { PageCTA } from "@/app/components/pageCta";
 import { PageHero } from "@/app/components/pageHero";
 import { ConsumerLoanFeatureSection, ConsumerLoanPhotosSection } from "@/app/components/consumer-loan-sections";
 
-import consumerBg from "@/public/images/branding/Rectangle 2.png"; // swap when available
+import consumerBg from "@/public/images/branding/consumer bg.png"; // swap when available
 
 export default function ConsumerLoanPage() {
   return (

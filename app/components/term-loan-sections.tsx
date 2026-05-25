@@ -3,7 +3,10 @@ import { ChevronRight } from "lucide-react";
 import Image from "next/image";
 
 import rect26 from "@/public/images/branding/Rectangle 26.png";
-import rect27 from "@/public/images/branding/Rectangle 27.png";
+import termImg2 from "@/public/images/branding/term image 2.png";
+import termImg3 from "@/public/images/branding/term image 3.png";
+import termImg4 from "@/public/images/branding/term image 4.png";
+import termImg5 from "@/public/images/branding/term image 5.png";
 
 /* ═══════════════════════════════════════════
    SECTION 1 — PLAN BIGGER, ACHIEVE MORE
@@ -34,7 +37,6 @@ export function TermLoanFeatureSection() {
 
         {/* Right — rectangular photo */}
         <div className="relative overflow-hidden rounded-2xl shadow-lg" style={{ height: 300 }}>
-          {/* swap with actual term loan photo */}
           <Image src={rect26} alt="Term loan" fill className="object-cover" />
         </div>
       </div>
@@ -47,10 +49,10 @@ export function TermLoanFeatureSection() {
    Dark bg with orange glow + 4 photo cards with labels below
 ═══════════════════════════════════════════ */
 const termFeatures = [
-  { label: "Structured Repayment Plan" },
-  { label: "Flexible Loan Duration" },
-  { label: "Competitive Interest Rate" },
-  { label: "Simple Application Process" },
+  { label: "Structured Repayment Plan", image: termImg2 },
+  { label: "Flexible Loan Duration",    image: termImg3 },
+  { label: "Competitive Interest Rate", image: termImg4 },
+  { label: "Simple Application Process", image: termImg5 },
 ];
 
 export function TermLoanFeaturesSection() {
@@ -68,11 +70,10 @@ export function TermLoanFeaturesSection() {
         </h2>
 
         <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
-          {termFeatures.map((f, i) => (
+          {termFeatures.map((f) => (
             <div key={f.label} className="flex flex-col gap-3">
               <div className="relative overflow-hidden rounded-xl shadow-lg" style={{ height: 160 }}>
-                {/* swap with actual photos */}
-                <Image src={i % 2 === 0 ? rect26 : rect27} alt={f.label} fill className="object-cover" />
+                <Image src={f.image} alt={f.label} fill className="object-cover" />
               </div>
               <p className="text-[13.5px] font-semibold leading-snug text-white">{f.label}</p>
             </div>

@@ -1,9 +1,13 @@
 "use client";
 import { PageCTA } from "@/app/components/pageCta";
 import { PageHero } from "@/app/components/pageHero";
-import { MembershipFeatureSection, MembershipBannerSection } from "@/app/components/membership-sections";
+import {
+  MembershipFeatureSection,
+  MembershipBannerSection,
+} from "@/app/components/membership-sections";
+import membershipBg from "@/public/images/branding/membership.png";
 
-import membershipBg from "@/public/images/branding/Rectangle 2.png"; // swap when available
+
 
 export default function MembershipPage() {
   return (

@@ -2,8 +2,12 @@
 import { ChevronRight } from "lucide-react";
 import Image from "next/image";
 
-import rect26 from "@/public/images/branding/Rectangle 26.png";
-import rect27 from "@/public/images/branding/Rectangle 27.png";
+import rect26 from "@/public/images/branding/chicken.png";
+
+import agricOne from "@/public/images/branding/agric 1.png";
+import agricTwo from "@/public/images/branding/agric 2.png";
+import agricThree from "@/public/images/branding/agric 3.png";
+import agricFour from "@/public/images/branding/agric  4.png";
 
 /* ═══════════════════════════════════════════
    SECTION 1 — CULTIVATING GROWTH
@@ -81,7 +85,7 @@ export function AgriBizGallerySection() {
 
         {/* 4-photo horizontal strip */}
         <div className="grid grid-cols-4 gap-3">
-          {[rect26, rect27, rect26, rect27].map((img, i) => (
+          {[agricOne, agricTwo, agricThree, agricFour].map((img, i) => (
             <div
               key={i}
               className="relative overflow-hidden rounded-xl shadow-lg"
