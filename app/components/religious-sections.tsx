@@ -149,7 +149,9 @@ export function ReligiousCategoriesSection() {
               className="flex flex-col items-center justify-center gap-4 rounded-2xl px-6 py-10 text-center shadow-md transition hover:-translate-y-0.5 hover:shadow-lg"
               style={{ background: cat.bg }}
             >
-             <Image src={image30} /> 
+              <Image src={image30} alt="Religious section image" />
+
+
               <p className="whitespace-pre-line text-[14px] font-bold leading-snug text-white">
                 {cat.label}
               </p>

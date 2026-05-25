@@ -50,9 +50,9 @@ export function SalaryAdvanceFeatureSection() {
    Centered heading + 4 feature cards (alternating dark/light)
 ═══════════════════════════════════════════ */
 const features = [
-  { label: "Quick access to funds",           dark: true  },
-  { label: "No collateral required",          dark: false },
-  { label: "Transparent terms & repayment",   dark: true  },
+  { label: "Quick access to funds", dark: true },
+  { label: "No collateral required", dark: false },
+  { label: "Transparent terms & repayment", dark: true },
   { label: "Secure and reliable banking service", dark: false },
 ];
 
@@ -60,9 +60,9 @@ function FeatureIcon({ dark }: { dark: boolean }) {
   return (
     <div className={`flex h-12 w-12 items-center justify-center rounded-full ${dark ? "bg-white/20" : "bg-[#e8f0fb]"}`}>
       <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect x="3"  y="16" width="5" height="9"  rx="1" fill={dark ? "white" : "#1a5fd4"} />
+        <rect x="3" y="16" width="5" height="9" rx="1" fill={dark ? "white" : "#1a5fd4"} />
         <rect x="11" y="10" width="5" height="15" rx="1" fill={dark ? "white" : "#1a5fd4"} />
-        <rect x="19" y="5"  width="5" height="20" rx="1" fill={dark ? "white" : "#1a5fd4"} />
+        <rect x="19" y="5" width="5" height="20" rx="1" fill={dark ? "white" : "#1a5fd4"} />
         <polyline points="5,16 13,10 21,5" stroke="#f59e0b" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none" />
         <circle cx="21" cy="5" r="2" fill="#f59e0b" />
       </svg>
@@ -85,7 +85,12 @@ export function SalaryAdvanceFeaturesSection() {
               className="flex flex-col items-center gap-4 rounded-2xl px-6 py-8 text-center shadow-md transition hover:-translate-y-0.5 hover:shadow-lg"
               style={{ background: f.dark ? "#0a1f44" : "white" }}
             >
-              <Image src={chartImg} dark={f.dark} />
+              {/* <Image src={chartImg} dark={f.dark} /> */}
+              <Image
+                src={chartImg}
+                alt="Chart image"
+                className={f.dark ? "brightness-75" : ""}
+              />
               <p className={`text-[13.5px] font-semibold leading-snug ${f.dark ? "text-white" : "text-[#0a1f44]"}`}>
                 {f.label}
               </p>

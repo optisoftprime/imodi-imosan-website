@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import PlaceholderImg from "./home/PlaceholderImg";
 
 // ─── Icons ────────────────────────────────────────────────────────────────────
 
@@ -185,9 +186,9 @@ export default function BankingServices() {
 
                         {/* SVG connector lines — drawn BELOW avatars */}
                         <svg className="absolute inset-0 w-full h-full" viewBox="0 0 360 240" fill="none" preserveAspectRatio="xMidYMid meet">
-                            <line x1="180" y1="120" x2="72"  y2="40"  stroke="white" strokeWidth="1.5" strokeDasharray="5 4" opacity="0.55" />
-                            <line x1="180" y1="120" x2="288" y2="40"  stroke="white" strokeWidth="1.5" strokeDasharray="5 4" opacity="0.55" />
-                            <line x1="180" y1="120" x2="80"  y2="200" stroke="white" strokeWidth="1.5" strokeDasharray="5 4" opacity="0.55" />
+                            <line x1="180" y1="120" x2="72" y2="40" stroke="white" strokeWidth="1.5" strokeDasharray="5 4" opacity="0.55" />
+                            <line x1="180" y1="120" x2="288" y2="40" stroke="white" strokeWidth="1.5" strokeDasharray="5 4" opacity="0.55" />
+                            <line x1="180" y1="120" x2="80" y2="200" stroke="white" strokeWidth="1.5" strokeDasharray="5 4" opacity="0.55" />
                             <line x1="180" y1="120" x2="180" y2="215" stroke="white" strokeWidth="1.5" strokeDasharray="5 4" opacity="0.55" />
                             <line x1="180" y1="120" x2="280" y2="200" stroke="white" strokeWidth="1.5" strokeDasharray="5 4" opacity="0.55" />
                         </svg>
