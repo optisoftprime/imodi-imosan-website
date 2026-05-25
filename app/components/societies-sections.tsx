@@ -2,8 +2,8 @@
 import { ChevronRight } from "lucide-react";
 import Image from "next/image";
 
-import socImage1 from "@/public/images/branding/soc image 1.png";
-import socImage2 from "@/public/images/branding/soc image 2.png";
+import socImage1 from "@/public/images/branding/soc image 1.png"; //soc image one
+import socImage2 from "@/public/images/branding/soc image 2.png"; // soc image two
 
 // Two overlapping photos layout matching the screenshot
 export function SocietiesFeatureSection() {
