@@ -2,12 +2,14 @@
 import { ChevronRight } from "lucide-react";
 import Image from "next/image";
 
-import rect26 from "@/public/images/branding/Rectangle 26.png";
+import rect26 from "@/public/images/branding/business woman.png";
 
 /* ═══════════════════════════════════════════
    SECTION 1 — GIVE YOUR BUSINESS THE BOOST
    Left: text | Right: circular photo
 ═══════════════════════════════════════════ */
+
+
 export function BusinessLoanFeatureSection() {
   return (
     <section className="relative overflow-hidden bg-white px-8 py-20">

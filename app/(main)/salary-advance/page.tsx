@@ -3,7 +3,7 @@ import { PageCTA } from "@/app/components/pageCta";
 import { PageHero } from "@/app/components/pageHero";
 import { SalaryAdvanceFeatureSection, SalaryAdvanceFeaturesSection } from "@/app/components/salary-advance-sections";
 
-import salaryBg from "@/public/images/branding/Rectangle 2.png"; // swap when available
+import salaryBg from "@/public/images/branding/salary bg.png"; // swap when available
 
 export default function SalaryAdvancePage() {
   return (

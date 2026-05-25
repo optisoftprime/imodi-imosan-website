@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import PlaceholderImg from "./home/PlaceholderImg";
 
 // ─── Icons ────────────────────────────────────────────────────────────────────
 
@@ -34,22 +33,7 @@ const StarIcon = () => (
     </svg>
 );
 
-const FlameLogoIcon = () => (
-    <svg width="64" height="64" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="40" cy="40" r="38" fill="rgba(255,255,255,0.15)" stroke="rgba(255,255,255,0.3)" strokeWidth="2" />
-        <path d="M40 14 C32 24 24 30 26 42 C28 52 36 60 40 66 C44 60 52 52 54 42 C56 30 48 24 40 14Z" fill="white" opacity="0.2" />
-        <path d="M40 20 C34 29 28 35 30 44 C32 53 38 59 40 63 C42 59 48 53 50 44 C52 35 46 29 40 20Z" fill="white" opacity="0.5" />
-        <path d="M40 28 C36 35 33 40 35 47 C37 53 40 57 40 57 C40 57 43 53 45 47 C47 40 44 35 40 28Z" fill="white" />
-        <ellipse cx="37" cy="40" rx="3" ry="6" fill="white" opacity="0.5" transform="rotate(-15 37 40)" />
-    </svg>
-);
-
-// ─── Placeholder image component ─────────────────────────────────────────────
-
-
-
-
-// ─── Service Card (right column) ──────────────────────────────────────────────
+// ─── Service Card ─────────────────────────────────────────────────────────────
 
 interface ServiceCardProps {
     icon: React.ReactNode;
@@ -65,7 +49,7 @@ const ServiceCard = ({ icon, title, description }: ServiceCardProps) => (
     </div>
 );
 
-// ─── Feature Item (bottom left) ───────────────────────────────────────────────
+// ─── Feature Item ─────────────────────────────────────────────────────────────
 
 interface FeatureItemProps {
     icon: React.ReactNode;
@@ -98,35 +82,37 @@ export default function BankingServices() {
 
                 {/* Left: Hero card (navy) */}
                 <div className="bg-[#0d2a4e] rounded-2xl p-8 flex flex-col items-center justify-between relative overflow-hidden min-h-[400px]">
-                    {/* Floating avatar top-right */}
-                    <div className="absolute top-6 right-6">
-                        <PlaceholderImg
-                            src="/images/ui/image-002.png"
-                            width={62}
-                            height={62}
-                            label="Avatar"
-                            className="rounded-2xl"
+
+                    {/* Floating avatar top-right — Group 1000005553 */}
+                    <div className="absolute top-5 right-5 z-10">
+                        <Image
+                            src="/images/branding/Group 1000005553.png"
+                            alt="Customer"
+                            width={72}
+                            height={72}
+                            className="rounded-2xl object-cover"
                         />
                     </div>
 
-                    {/* Floating avatar bottom-left */}
-                    <div className="absolute bottom-[210px] left-4">
-                        <PlaceholderImg
-                            src="/images/ui/smilling-girl-in-yellow.png"
-                            width={62}
-                            height={62}
-                            label="Avatar"
-                            className="rounded-2xl"
+                    {/* Floating avatar bottom-left — Ellipse 11 (circular) */}
+                    <div className="absolute z-10" style={{ bottom: 230, left: 16 }}>
+                        <Image
+                            src="/images/branding/Ellipse 11.png"
+                            alt="Customer"
+                            width={72}
+                            height={72}
+                            className="rounded-full object-cover"
                         />
                     </div>
 
-                    {/* Main image */}
-                    <div className="w-full flex justify-center mt-4">
-                        <PlaceholderImg src="/images/ui/image-001.png"
-                            width={280}
-                            height={220}
-                            rounded="rounded-2xl"
-                            label="Main Hero Image"
+                    {/* Main hero image — Frame 203 */}
+                    <div className="w-full flex justify-center mt-4 z-0">
+                        <Image
+                            src="/images/branding/Frame 203.png"
+                            alt="Our Financial Solutions"
+                            width={300}
+                            height={230}
+                            className="rounded-2xl object-cover"
                         />
                     </div>
 
@@ -181,17 +167,40 @@ export default function BankingServices() {
                     className="rounded-2xl p-8 flex flex-col items-center text-center"
                     style={{ backgroundColor: "#C98B2A" }}
                 >
-                    {/* Label */}
                     <p className="text-white font-extrabold text-xs uppercase tracking-widest mb-6">
                         IMODI-IMOSAN MICRO FINANCE BANK
                     </p>
 
-                    {/* Network diagram */}
-                    <div className="relative w-full flex items-center justify-center mb-6" style={{ height: 220 }}>
+                    {/*
+                      Network diagram — viewBox 360x240
+                      Avatar centres (for SVG lines):
+                        Top-left:     72, 40
+                        Top-right:   288, 40
+                        Center logo: 180,120
+                        Bottom-left:  80,200
+                        Bottom-mid:  180,215
+                        Bottom-right:280,200
+                    */}
+                    <div className="relative w-full mb-6" style={{ height: 240 }}>
 
-                        {/* Center logo */}
-                        <div className="absolute" style={{ top: "50%", left: "50%", transform: "translate(-50%, -50%)" }}>
-                            <FlameLogoIcon />
+                        {/* SVG connector lines — drawn BELOW avatars */}
+                        <svg className="absolute inset-0 w-full h-full" viewBox="0 0 360 240" fill="none" preserveAspectRatio="xMidYMid meet">
+                            <line x1="180" y1="120" x2="72"  y2="40"  stroke="white" strokeWidth="1.5" strokeDasharray="5 4" opacity="0.55" />
+                            <line x1="180" y1="120" x2="288" y2="40"  stroke="white" strokeWidth="1.5" strokeDasharray="5 4" opacity="0.55" />
+                            <line x1="180" y1="120" x2="80"  y2="200" stroke="white" strokeWidth="1.5" strokeDasharray="5 4" opacity="0.55" />
+                            <line x1="180" y1="120" x2="180" y2="215" stroke="white" strokeWidth="1.5" strokeDasharray="5 4" opacity="0.55" />
+                            <line x1="180" y1="120" x2="280" y2="200" stroke="white" strokeWidth="1.5" strokeDasharray="5 4" opacity="0.55" />
+                        </svg>
+
+                        {/* Center logo — logo.png */}
+                        <div className="absolute z-10" style={{ top: "50%", left: "50%", transform: "translate(-50%, -50%)" }}>
+                            <Image
+                                src="/images/branding/logo.png"
+                                alt="IIMFB Logo"
+                                width={72}
+                                height={72}
+                                className="object-contain"
+                            />
                         </div>
 
                         {/* Top-left avatar */}
@@ -218,16 +227,6 @@ export default function BankingServices() {
                         <div className="absolute" style={{ bottom: "4%", right: "18%" }}>
                             <PlaceholderImg src="" width={64} height={64} rounded="rounded-xl" label="Customer" />
                         </div>
-
-                        {/* Dashed connector lines (SVG overlay) */}
-                        <svg className="absolute inset-0 w-full h-full" viewBox="0 0 340 220" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            {/* Center point ~170,110 */}
-                            <line x1="170" y1="110" x2="60" y2="32" stroke="white" strokeWidth="1.5" strokeDasharray="5 4" opacity="0.5" />
-                            <line x1="170" y1="110" x2="280" y2="32" stroke="white" strokeWidth="1.5" strokeDasharray="5 4" opacity="0.5" />
-                            <line x1="170" y1="110" x2="90" y2="180" stroke="white" strokeWidth="1.5" strokeDasharray="5 4" opacity="0.5" />
-                            <line x1="170" y1="110" x2="170" y2="205" stroke="white" strokeWidth="1.5" strokeDasharray="5 4" opacity="0.5" />
-                            <line x1="170" y1="110" x2="250" y2="180" stroke="white" strokeWidth="1.5" strokeDasharray="5 4" opacity="0.5" />
-                        </svg>
                     </div>
 
                     {/* Trust text */}

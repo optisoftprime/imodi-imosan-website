@@ -3,7 +3,7 @@ import { PageCTA } from "@/app/components/pageCta";
 import { PageHero } from "@/app/components/pageHero";
 import { TargetSavingsFeatureSection, TargetSavingsStepsSection } from "@/app/components/target-savings-sections";
 
-import targetBg from "@/public/images/branding/Rectangle 2.png"; // swap when available
+import targetBg from "@/public/images/branding/image 81.png"; // swap when available
 
 export default function TargetSavingsPage() {
   return (

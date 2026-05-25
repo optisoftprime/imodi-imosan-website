@@ -8,7 +8,49 @@ import vector1 from "@/public/images/branding/Vector (1).png";
 import vector2 from "@/public/images/branding/Vector (2).png";
 import vector from "@/public/images/branding/Vector.png";
 
-
+/* ─── Dot grid helper ─────────────────────────────────────────────────────── */
+const DotGrid = ({
+  rows = 12,
+  cols = 12,
+  gap = 22,
+  r = 2,
+  color = "#1a5fd4",
+  opacity = 0.08,
+  className = "",
+}: {
+  rows?: number;
+  cols?: number;
+  gap?: number;
+  r?: number;
+  color?: string;
+  opacity?: number;
+  className?: string;
+}) => {
+  const w = cols * gap;
+  const h = rows * gap;
+  return (
+    <svg
+      width={w}
+      height={h}
+      viewBox={`0 0 ${w} ${h}`}
+      xmlns="http://www.w3.org/2000/svg"
+      className={className}
+      style={{ opacity }}
+    >
+      {Array.from({ length: rows }).map((_, row) =>
+        Array.from({ length: cols }).map((_, col) => (
+          <circle
+            key={`${row}-${col}`}
+            cx={col * gap + gap / 2}
+            cy={row * gap + gap / 2}
+            r={r}
+            fill={color}
+          />
+        )),
+      )}
+    </svg>
+  );
+};
 
 /* ═══════════════════════════════════════════
    START SMALL, GROW BIG
@@ -16,33 +58,20 @@ import vector from "@/public/images/branding/Vector.png";
 export function StartSmallSection() {
   return (
     <section className="relative overflow-hidden bg-white px-8 py-20">
-      <div className="pointer-events-none absolute bottom-0 right-0 opacity-[0.07]">
-        <svg
-          width="320"
-          height="320"
-          viewBox="0 0 320 320"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          {Array.from({ length: 13 }).map((_, row) =>
-            Array.from({ length: 13 }).map((_, col) => (
-              <circle
-                key={`${row}-${col}`}
-                cx={col * 25 + 12}
-                cy={row * 25 + 12}
-                r="2.5"
-                fill="#1a5fd4"
-              />
-            )),
-          )}
-        </svg>
+
+      {/* Dot grid — bottom-right corner, bleeds off edge */}
+      <div className="pointer-events-none absolute -bottom-6 -right-6">
+        <DotGrid rows={14} cols={14} gap={22} r={2.2} />
       </div>
 
       <div className="relative mx-auto grid max-w-[1200px] grid-cols-1 items-center gap-16 lg:grid-cols-2">
+
+        {/* ── Left: text ── */}
         <div>
-          <p className="text-xs font-semibold uppercase tracking-[0.25em] text-[#1a5fd4]">
+          <p className="text-xs font-bold uppercase tracking-[0.28em] text-[#1a5fd4]">
             START SMALL,
           </p>
-          <h2 className="font-display mt-1 text-4xl font-black text-[#0a1f44] md:text-5xl">
+          <h2 className="mt-1 text-4xl font-black text-[#0a1f44] md:text-5xl">
             GROW BIG
           </h2>
           <div className="mt-6 space-y-4 text-[15px] leading-[1.85] text-gray-500">
@@ -58,18 +87,17 @@ export function StartSmallSection() {
               designed to keep you focused, motivated, and in control.
             </p>
           </div>
-          <button className="mt-8 inline-flex items-center gap-2 rounded-lg border border-[#0a1f44]/20 bg-white px-6 py-3 text-sm font-semibold text-[#0a1f44] shadow-sm transition hover:shadow-md">
+          <button className="mt-8 inline-flex items-center gap-2 rounded-lg bg-[#1a5fd4] px-7 py-3.5 text-sm font-semibold text-white shadow-md transition hover:bg-[#0d3fa8] hover:shadow-lg">
             Start Saving Now <ChevronRight className="h-4 w-4" />
           </button>
         </div>
 
-        <div
-          className="relative flex items-center justify-center"
-          style={{ height: 380 }}
-        >
+        {/* ── Right: two overlapping images ── */}
+        <div className="relative flex items-center justify-center" style={{ height: 360 }}>
+          {/* Top-right image */}
           <div
-            className="absolute right-0 top-0 overflow-hidden rounded-2xl shadow-lg"
-            style={{ width: 240, height: 270 }}
+            className="absolute overflow-hidden rounded-2xl shadow-lg"
+            style={{ width: 260, height: 240, top: 0, right: 0 }}
           >
             <Image
               src={rect26}
@@ -78,9 +106,10 @@ export function StartSmallSection() {
               className="object-cover"
             />
           </div>
+          {/* Bottom-left image — overlaps slightly */}
           <div
-            className="absolute bottom-0 left-0 overflow-hidden rounded-2xl shadow-2xl"
-            style={{ width: 230, height: 250 }}
+            className="absolute overflow-hidden rounded-2xl shadow-2xl"
+            style={{ width: 240, height: 220, bottom: 0, left: 0 }}
           >
             <Image
               src={rect27}
@@ -125,39 +154,30 @@ const savingsTypes = [
 export function SavingsTypesSection() {
   return (
     <section className="relative overflow-hidden bg-[#f8faff] px-8 py-20">
-      <div className="pointer-events-none absolute left-0 top-0 opacity-[0.07]">
-        <svg
-          width="280"
-          height="280"
-          viewBox="0 0 280 280"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          {Array.from({ length: 11 }).map((_, row) =>
-            Array.from({ length: 11 }).map((_, col) => (
-              <circle
-                key={`${row}-${col}`}
-                cx={col * 26 + 13}
-                cy={row * 26 + 13}
-                r="2.5"
-                fill="#1a5fd4"
-              />
-            )),
-          )}
-        </svg>
+
+      {/* Dot grid — right side, mid-height, bleeds off edge */}
+      <div className="pointer-events-none absolute -right-6 top-1/2 -translate-y-1/2">
+        <DotGrid rows={16} cols={10} gap={22} r={2.2} />
+      </div>
+
+      {/* Dot grid — bottom-left corner */}
+      <div className="pointer-events-none absolute -bottom-6 -left-6">
+        <DotGrid rows={10} cols={10} gap={22} r={2.2} />
       </div>
 
       <div className="relative mx-auto max-w-[1200px]">
-        <h2 className="font-display mb-12 text-center text-3xl font-black uppercase tracking-[0.15em] text-[#0a1f44] md:text-4xl">
+        <h2 className="mb-12 text-center text-3xl font-black uppercase tracking-[0.18em] text-[#0a1f44] md:text-4xl">
           SAVINGS TYPES
         </h2>
 
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
           {savingsTypes.map((type) => (
             <div
               key={type.title}
               className="group overflow-hidden rounded-2xl bg-white shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
             >
-              <div className="relative h-52 w-full overflow-hidden">
+              {/* Image area — taller to match Figma */}
+              <div className="relative w-full overflow-hidden" style={{ height: 220 }}>
                 <Image
                   src={type.img}
                   alt={type.alt}
@@ -166,7 +186,7 @@ export function SavingsTypesSection() {
                 />
               </div>
               <div className="p-6">
-                <h3 className="font-display text-xl font-bold text-[#0a1f44]">
+                <h3 className="text-xl font-bold text-[#0a1f44]">
                   {type.title}
                 </h3>
                 <p className="mt-3 text-[13.5px] leading-relaxed text-gray-500">

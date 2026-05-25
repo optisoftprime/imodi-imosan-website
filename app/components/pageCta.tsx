@@ -2,6 +2,26 @@
 import { ChevronRight } from "lucide-react";
 import Image, { StaticImageData } from "next/image";
 
+import image27 from "@/public/images/branding/image 27.png";
+import rect5 from "@/public/images/branding/Rectangle 5.png";
+import rect6 from "@/public/images/branding/Rectangle 6.png";
+
+interface OverlayImageConfig {
+  src: StaticImageData | string;
+  /** Which side/position the image occupies. Defaults to "left" */
+  position?: "left" | "right" | "full" | "center";
+  /** object-position for the Next Image. e.g. "left bottom" */
+  objectPosition?: string;
+  /** 0–1 opacity. Default 1 */
+  opacity?: number;
+  /** CSS mix-blend-mode. Default "screen" */
+  blendMode?: React.CSSProperties["mixBlendMode"];
+  /** Override the container className entirely */
+  containerClassName?: string;
+  /** Override the container style entirely */
+  containerStyle?: React.CSSProperties;
+}
+
 interface PageCTAProps {
   title?: string;
   description?: string;
@@ -10,8 +30,8 @@ interface PageCTAProps {
   buttonText2?: string;
   onButton2Click?: () => void;
   backgroundImage?: StaticImageData | string;
-  overlayImage1?: StaticImageData | string;
-  overlayImage2?: StaticImageData | string;
+  /** Pass an array of overlay configs for full control, or leave undefined for default */
+  overlays?: OverlayImageConfig[];
   gradient?: string;
   logoIcon?: React.ReactNode;
   minHeight?: string;
@@ -19,27 +39,59 @@ interface PageCTAProps {
 
 function DefaultLogoMark() {
   return (
-    <div className="mx-auto mb-8 h-20 w-20 drop-shadow-[0_0_24px_rgba(100,160,255,0.8)]">
-      <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" className="h-full w-full">
-        <circle cx="40" cy="40" r="38" stroke="url(#ctaGlow)" strokeWidth="2" strokeOpacity="0.6" />
-        <circle cx="40" cy="40" r="28" stroke="white" strokeWidth="1.5" strokeOpacity="0.4" />
-        <path d="M40 14 C28 22 22 32 26 44 C30 54 40 60 40 60 C40 60 50 54 54 44 C58 32 52 22 40 14Z" fill="url(#ctaLeaf)" opacity="0.95" />
-        <path d="M40 20 C32 27 29 35 32 43 C35 50 40 54 40 54 C40 54 45 50 48 43 C51 35 48 27 40 20Z" fill="white" opacity="0.25" />
-        <defs>
-          <linearGradient id="ctaLeaf" x1="40" y1="14" x2="40" y2="60" gradientUnits="userSpaceOnUse">
-            <stop offset="0%" stopColor="#7ecfff" />
-            <stop offset="50%" stopColor="#3b8ee8" />
-            <stop offset="100%" stopColor="#1a4fa0" />
-          </linearGradient>
-          <linearGradient id="ctaGlow" x1="0" y1="0" x2="80" y2="80" gradientUnits="userSpaceOnUse">
-            <stop offset="0%" stopColor="#60a5fa" />
-            <stop offset="100%" stopColor="#1e40af" />
-          </linearGradient>
-        </defs>
-      </svg>
+    <div className="mx-auto mb-8 h-20 w-20 overflow-hidden rounded-full shadow-[0_0_32px_rgba(100,160,255,0.6)]">
+      <Image
+        src={image27}
+        alt="IIMFB"
+        width={80}
+        height={80}
+        className="h-full w-full object-cover"
+      />
     </div>
   );
 }
+
+/** Resolve an OverlayImageConfig into container style + image props */
+function resolveOverlayContainer(cfg: OverlayImageConfig): React.CSSProperties {
+  if (cfg.containerStyle) return cfg.containerStyle;
+
+  const base: React.CSSProperties = {
+    position: "absolute",
+    inset: 0,
+    opacity: cfg.opacity ?? 1,
+    mixBlendMode: cfg.blendMode ?? "screen",
+  };
+
+  switch (cfg.position ?? "left") {
+    case "left":
+      return { ...base, right: "50%", left: 0 };
+    case "right":
+      return { ...base, left: "50%", right: 0 };
+    case "center":
+      return { ...base, left: "25%", right: "25%" };
+    case "full":
+    default:
+      return base;
+  }
+}
+
+/** Default overlays matching the Figma — two diagonal tinted panels */
+const DEFAULT_OVERLAYS: OverlayImageConfig[] = [
+  {
+    src: rect5,
+    position: "left",
+    objectPosition: "left center",
+    blendMode: "screen",
+    opacity: 1,
+  },
+  {
+    src: rect6,
+    position: "right",
+    objectPosition: "right center",
+    blendMode: "screen",
+    opacity: 0.85,
+  },
+];
 
 export function PageCTA({
   title = "Start Banking with Confidence",
@@ -49,17 +101,17 @@ export function PageCTA({
   buttonText2,
   onButton2Click,
   backgroundImage,
-  overlayImage1,
-  overlayImage2,
-  gradient = "linear-gradient(135deg, #0a1a6e 0%, #0d2fa8 40%, #1a5fd4 100%)",
+  overlays = DEFAULT_OVERLAYS,
+  gradient = "linear-gradient(135deg, #2667FF00 0%, #2667FF 100%)",
   logoIcon,
-  minHeight = "360px",
+  minHeight = "400px",
 }: PageCTAProps) {
   return (
     <section
       className="relative overflow-hidden py-24 text-center"
-      style={{ minHeight, ...(!backgroundImage ? { background: gradient } : {}) }}
+      style={{ minHeight, background: gradient }}
     >
+      {/* Optional background image beneath everything */}
       {backgroundImage && (
         <div className="absolute inset-0">
           <Image src={backgroundImage} alt="" fill className="object-cover object-center" />
@@ -67,23 +119,32 @@ export function PageCTA({
         </div>
       )}
 
-      {overlayImage1 && (
-        <div className="absolute inset-0">
-          <Image src={overlayImage1} alt="" fill className="object-cover object-left-bottom" style={{ mixBlendMode: "screen" }} />
-        </div>
-      )}
+      {/* Overlay images */}
+      {overlays.map((cfg, i) => {
+        const containerStyle = resolveOverlayContainer(cfg);
+        return (
+          <div key={i} style={containerStyle} className={cfg.containerClassName}>
+            <Image
+              src={cfg.src}
+              alt=""
+              fill
+              className="object-cover"
+              style={{ objectPosition: cfg.objectPosition ?? "center" }}
+            />
+          </div>
+        );
+      })}
 
-      {overlayImage2 && (
-        <div className="absolute inset-y-0 right-0 w-1/2">
-          <Image src={overlayImage2} alt="" fill className="object-cover object-right" style={{ mixBlendMode: "screen", opacity: 0.6 }} />
-        </div>
-      )}
+      {/* Subtle radial vignette on top */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{ background: "radial-gradient(ellipse at center, rgba(10,30,90,0.08) 0%, rgba(5,10,40,0.35) 100%)" }}
+      />
 
-      <div className="absolute inset-0" style={{ background: "radial-gradient(ellipse at center, rgba(10,30,90,0.10) 0%, rgba(5,10,40,0.40) 100%)" }} />
-
+      {/* Content */}
       <div className="relative z-10 mx-auto max-w-2xl px-6">
         {logoIcon !== undefined ? logoIcon : <DefaultLogoMark />}
-        <h2 className="font-display text-3xl font-black text-white md:text-4xl lg:text-5xl">{title}</h2>
+        <h2 className="text-3xl font-black text-white md:text-4xl lg:text-5xl">{title}</h2>
         <p className="mt-5 text-base leading-relaxed text-blue-200">{description}</p>
 
         <div className="mt-10 flex flex-wrap items-center justify-center gap-4">

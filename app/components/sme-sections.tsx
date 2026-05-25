@@ -3,7 +3,8 @@ import { ChevronRight } from "lucide-react";
 import Image from "next/image";
 
 import rect26 from "@/public/images/branding/Rectangle 26.png";
-import rect27 from "@/public/images/branding/Rectangle 27.png";
+import image32 from "@/public/images/branding/image 32.png";
+import maskGroup from "@/public/images/branding/Mask group.png";
 
 /* ═══════════════════════════════════════════
    SECTION 1 — YOUR BUSINESS DREAMS
@@ -67,15 +68,14 @@ export function SmeFeatureSection() {
 export function SmeOpportunitiesSection() {
   return (
     <section className="relative overflow-hidden bg-[#f8faff] px-8 py-20">
-      {/* Dot pattern world-map feel */}
-      <div className="pointer-events-none absolute inset-0 flex items-center justify-center opacity-[0.06]">
-        <svg width="900" height="400" viewBox="0 0 900 400" xmlns="http://www.w3.org/2000/svg">
-          {Array.from({ length: 16 }).map((_, row) =>
-            Array.from({ length: 36 }).map((_, col) => (
-              <circle key={`${row}-${col}`} cx={col * 25 + 12} cy={row * 25 + 12} r="2.5" fill="#1a5fd4" />
-            )),
-          )}
-        </svg>
+      {/* World map background image */}
+      <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
+        <Image
+          src={maskGroup}
+          alt=""
+          fill
+          className="object-cover opacity-[0.06]"
+        />
       </div>
 
       {/* Yellow accent circle behind image */}
@@ -87,7 +87,7 @@ export function SmeOpportunitiesSection() {
         </h2>
 
         <div className="relative mx-auto mt-14 h-[340px] w-[280px]">
-          <Image src={rect27} alt="Business owner" fill className="object-contain object-bottom" />
+          <Image src={image32} alt="Business owner" fill className="object-contain object-bottom" />
         </div>
       </div>
     </section>

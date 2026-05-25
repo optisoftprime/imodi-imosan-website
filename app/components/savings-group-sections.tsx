@@ -3,7 +3,7 @@ import { ChevronRight } from "lucide-react";
 import Image from "next/image";
 
 import rect26 from "@/public/images/branding/Rectangle 26.png";
-import rect27 from "@/public/images/branding/Rectangle 27.png";
+import rect27 from "@/public/images/branding/image 90.png";
 
 /* ═══════════════════════════════════════════
    SECTION 1 — DON'T SAVE ALONE
@@ -45,7 +45,6 @@ export function SavingsGroupFeatureSection() {
             className="relative overflow-hidden shadow-2xl"
             style={{ width: 320, height: 320, borderRadius: "60% 40% 50% 50% / 50% 50% 40% 60%" }}
           >
-            {/* swap with actual savings group photo */}
             <Image src={rect26} alt="Savings group" fill className="object-cover" />
           </div>
         </div>
@@ -60,15 +59,15 @@ export function SavingsGroupFeatureSection() {
 ═══════════════════════════════════════════ */
 export function SavingsGroupPowerhouseSection() {
   return (
-    <section className="bg-white px-8 pb-20">
-      <div className="mx-auto max-w-[1200px]">
+    <section className="bg-white pb-20">
+      <div className="mx-auto max-w-[1200px] px-8">
         <h2 className="font-display mb-8 text-center text-2xl font-black uppercase tracking-wide text-[#0a1f44] md:text-3xl">
           Turn Your Circle Into A Savings Powerhouse
         </h2>
-        <div className="relative h-[400px] w-full overflow-hidden rounded-2xl shadow-xl">
-          {/* swap with actual group photo */}
-          <Image src={rect27} alt="Savings circle" fill className="object-cover object-center" />
-        </div>
+      </div>
+      {/* Full viewport width image — breaks out of any container */}
+      <div className="relative h-[400px] w-screen overflow-hidden">
+        <Image src={rect27} alt="Savings circle" fill className="object-cover object-center" />
       </div>
     </section>
   );

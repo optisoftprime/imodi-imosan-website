@@ -2,8 +2,8 @@
 import { ChevronRight } from "lucide-react";
 import Image from "next/image";
 
-import rect26 from "@/public/images/branding/Rectangle 26.png";
-import rect27 from "@/public/images/branding/Rectangle 27.png";
+import membershipImg1 from "@/public/images/branding/membership image 1.png";
+import membershipImg2 from "@/public/images/branding/membership image 2.png";
 import savingsBg from "@/public/images/branding/Rectangle 2.png";
 
 /* ═══════════════════════════════════════════
@@ -15,31 +15,43 @@ export function MembershipFeatureSection() {
     <section className="relative overflow-hidden bg-white px-8 py-20">
       <div className="relative mx-auto grid max-w-[1200px] grid-cols-1 items-center gap-16 lg:grid-cols-2">
         {/* Left — two side-by-side photos */}
-        <div className="flex items-end gap-4">
+        <div className="relative" style={{ height: 320 }}>
+
+          {/* Left image — taller, big curve top-right only */}
           <div
-            className="overflow-hidden rounded-2xl shadow-lg"
-            style={{ width: 200, height: 220 }}
+            className="absolute overflow-hidden shadow-lg"
+            style={{
+              width: 210,
+              height: 300,
+              top: 0,
+              left: 0,
+              borderRadius: "16px 120px 16px 16px",
+            }}
           >
-            {/* swap with actual membership photo */}
             <Image
-              src={rect26}
+              src={membershipImg1}
               alt="Group"
-              width={200}
-              height={220}
-              className="h-full w-full object-cover"
+              fill
+              className="object-cover object-center"
             />
           </div>
+
+          {/* Right image — shorter, sits lower, big curve bottom-left only */}
           <div
-            className="overflow-hidden rounded-2xl shadow-2xl"
-            style={{ width: 180, height: 190 }}
+            className="absolute overflow-hidden shadow-2xl"
+            style={{
+              width: 190,
+              height: 220,
+              top: 80,
+              left: 230,
+              borderRadius: "16px 16px 16px 120px",
+            }}
           >
-            {/* swap with actual membership photo */}
             <Image
-              src={rect27}
+              src={membershipImg2}
               alt="Community"
-              width={180}
-              height={190}
-              className="h-full w-full object-cover"
+              fill
+              className="object-cover object-center"
             />
           </div>
         </div>
@@ -97,53 +109,16 @@ export function MembershipBannerSection() {
         preserveAspectRatio="xMidYMid slice"
         xmlns="http://www.w3.org/2000/svg"
       >
-        <line
-          x1="320"
-          y1="0"
-          x2="220"
-          y2="340"
-          stroke="#f97316"
-          strokeWidth="18"
-          strokeLinecap="round"
-          opacity="0.9"
-        />
-        <line
-          x1="360"
-          y1="0"
-          x2="260"
-          y2="340"
-          stroke="#f97316"
-          strokeWidth="10"
-          strokeLinecap="round"
-          opacity="0.6"
-        />
-        <line
-          x1="880"
-          y1="0"
-          x2="780"
-          y2="340"
-          stroke="#f97316"
-          strokeWidth="18"
-          strokeLinecap="round"
-          opacity="0.9"
-        />
-        <line
-          x1="920"
-          y1="0"
-          x2="820"
-          y2="340"
-          stroke="#f97316"
-          strokeWidth="10"
-          strokeLinecap="round"
-          opacity="0.6"
-        />
+        <line x1="320" y1="0" x2="220" y2="340" stroke="#f97316" strokeWidth="18" strokeLinecap="round" opacity="0.9" />
+        <line x1="360" y1="0" x2="260" y2="340" stroke="#f97316" strokeWidth="10" strokeLinecap="round" opacity="0.6" />
+        <line x1="880" y1="0" x2="780" y2="340" stroke="#f97316" strokeWidth="18" strokeLinecap="round" opacity="0.9" />
+        <line x1="920" y1="0" x2="820" y2="340" stroke="#f97316" strokeWidth="10" strokeLinecap="round" opacity="0.6" />
       </svg>
 
       {/* Person image — right side */}
       <div className="absolute bottom-0 right-16 hidden h-full w-[320px] lg:block">
-        {/* swap with actual banner person photo */}
         <Image
-          src={rect26}
+          src={membershipImg1}
           alt="Member"
           fill
           className="object-cover object-top"

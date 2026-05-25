@@ -437,12 +437,19 @@ interface DropdownPanelProps {
   items: DropdownItem[];
   style: "grid" | "list";
   isOpen: boolean;
+  panelRef: React.RefObject<HTMLDivElement>;
 }
 
-const DropdownPanel = ({ items, style, isOpen }: DropdownPanelProps) => (
+const DropdownPanel = ({
+  items,
+  style,
+  isOpen,
+  panelRef,
+}: DropdownPanelProps) => (
   <div
+    ref={panelRef}
     className={[
-      "absolute top-full left-1/2 -translate-x-1/2 bg-white rounded-xl shadow-xl z-50",
+      "absolute top-full bg-white rounded-xl shadow-xl z-50",
       "transition-all duration-200 origin-top",
       isOpen
         ? "opacity-100 translate-y-0 pointer-events-auto"
@@ -516,11 +523,53 @@ const DesktopNavItem = ({
   onToggle,
   onClose,
 }: DesktopNavItemProps) => {
-  const ref = useRef<HTMLLIElement>(null);
+  const wrapperRef = useRef<HTMLLIElement>(null);
+  const panelRef = useRef<HTMLDivElement>(null);
+
+  // Recalculate panel horizontal position whenever it opens
+  useEffect(() => {
+    if (!isOpen || !wrapperRef.current || !panelRef.current) return;
+
+    const panel = panelRef.current;
+    const trigger = wrapperRef.current;
+
+    // Reset any previously applied positioning so we measure cleanly
+    panel.style.left = "";
+    panel.style.right = "";
+    panel.style.transform = "";
+
+    const panelWidth = panel.offsetWidth;
+    const triggerRect = trigger.getBoundingClientRect();
+    const viewportWidth = window.innerWidth;
+    const EDGE_MARGIN = 12; // px gap from viewport edge
+
+    // Ideal: center the panel on the trigger button
+    const idealLeft = triggerRect.left + triggerRect.width / 2 - panelWidth / 2;
+
+    if (idealLeft + panelWidth + EDGE_MARGIN > viewportWidth) {
+      // Would overflow right — anchor to right edge of trigger instead
+      const overflowAmount =
+        idealLeft + panelWidth + EDGE_MARGIN - viewportWidth;
+      const adjustedLeft = idealLeft - overflowAmount;
+
+      // Convert back to position relative to the <li> (which is position:relative)
+      const liLeft = triggerRect.left;
+      panel.style.left = `${adjustedLeft - liLeft}px`;
+    } else if (idealLeft < EDGE_MARGIN) {
+      // Would overflow left — anchor to left edge
+      const liLeft = triggerRect.left;
+      panel.style.left = `${EDGE_MARGIN - liLeft}px`;
+    } else {
+      // Fits centered — use translateX so it stays relative to the li
+      const liLeft = triggerRect.left;
+      panel.style.left = `${idealLeft - liLeft}px`;
+    }
+  }, [isOpen]);
 
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
-      if (ref.current && !ref.current.contains(e.target as Node)) onClose();
+      if (wrapperRef.current && !wrapperRef.current.contains(e.target as Node))
+        onClose();
     };
     if (isOpen) document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
@@ -540,7 +589,7 @@ const DesktopNavItem = ({
   }
 
   return (
-    <li ref={ref} className="relative">
+    <li ref={wrapperRef} className="relative">
       <button
         onClick={onToggle}
         className="flex items-center gap-1 px-3 h-16 text-sm font-bold text-[#1a2942] hover:text-[#2196f3] transition-colors whitespace-nowrap bg-transparent border-none cursor-pointer font-[inherit]"
@@ -554,6 +603,7 @@ const DesktopNavItem = ({
         items={item.dropdown}
         style={item.dropdownStyle ?? "list"}
         isOpen={isOpen}
+        panelRef={panelRef}
       />
     </li>
   );

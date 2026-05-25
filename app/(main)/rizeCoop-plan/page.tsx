@@ -3,8 +3,10 @@ import { PageCTA } from "@/app/components/pageCta";
 import { PageHero } from "@/app/components/pageHero";
 import { RizeCoopLoanFeatureSection, RizeCoopLoanBannerSection } from "@/app/components/rizecoop-loan-sections";
 
-import rizeCoopBg from "@/public/images/branding/Rectangle 2.png"; // swap when available
+import rizeCoopBg from "@/public/images/branding/Rectangle 2.png"; 
 
+
+// This is the rize coop loan page
 export default function RizeCoopLoanPage() {
   return (
     <main className="min-h-screen">

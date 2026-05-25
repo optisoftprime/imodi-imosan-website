@@ -3,8 +3,10 @@ import { PageCTA } from "@/app/components/pageCta";
 import { PageHero } from "@/app/components/pageHero";
 import { BusinessLoanFeatureSection, BusinessLoanFeaturesSection } from "@/app/components/business-loan-sections";
 
-import bizBg from "@/public/images/branding/Rectangle 2.png"; // swap when available
+import bizBg from "@/public/images/branding/business-loan .png"; 
 
+
+// this is the business loan page
 export default function BusinessLoanPage() {
   return (
     <main className="min-h-screen">
