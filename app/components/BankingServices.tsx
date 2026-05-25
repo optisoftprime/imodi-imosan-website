@@ -203,59 +203,29 @@ export default function BankingServices() {
                             />
                         </div>
 
-                        {/* Top-left — wheel image1 */}
-                        <div className="absolute z-10" style={{ top: 4, left: "8%" }}>
-                            <Image
-                                src="/images/branding/wheel image1.png"
-                                alt="Customer"
-                                width={80}
-                                height={80}
-                                className="rounded-xl object-cover"
-                            />
+                        {/* Top-left avatar */}
+                        <div className="absolute" style={{ top: "4%", left: "8%" }}>
+                            <PlaceholderImg src="" width={64} height={64} rounded="rounded-xl" label="Customer" />
                         </div>
 
-                        {/* Top-right — wheel image2 */}
-                        <div className="absolute z-10" style={{ top: 4, right: "8%" }}>
-                            <Image
-                                src="/images/branding/wheel image2.png"
-                                alt="Customer"
-                                width={80}
-                                height={80}
-                                className="rounded-xl object-cover"
-                            />
+                        {/* Top-right avatar */}
+                        <div className="absolute" style={{ top: "4%", right: "8%" }}>
+                            <PlaceholderImg src="" width={64} height={64} rounded="rounded-xl" label="Customer" />
                         </div>
 
-                        {/* Bottom-left — wheel image3 */}
-                        <div className="absolute z-10" style={{ bottom: 4, left: "14%" }}>
-                            <Image
-                                src="/images/branding/wheel image3.png"
-                                alt="Customer"
-                                width={80}
-                                height={80}
-                                className="rounded-xl object-cover"
-                            />
+                        {/* Bottom-left avatar */}
+                        <div className="absolute" style={{ bottom: "4%", left: "18%" }}>
+                            <PlaceholderImg src="" width={64} height={64} rounded="rounded-xl" label="Customer" />
                         </div>
 
-                        {/* Bottom-center — wheel image4 */}
-                        <div className="absolute z-10" style={{ bottom: 0, left: "50%", transform: "translateX(-50%)" }}>
-                            <Image
-                                src="/images/branding/wheel image4.png"
-                                alt="Customer"
-                                width={80}
-                                height={80}
-                                className="rounded-xl object-cover"
-                            />
+                        {/* Bottom-center avatar */}
+                        <div className="absolute" style={{ bottom: "0%", left: "50%", transform: "translateX(-50%)" }}>
+                            <PlaceholderImg src="" width={64} height={64} rounded="rounded-xl" label="Customer" />
                         </div>
 
-                        {/* Bottom-right — wheel image 5 */}
-                        <div className="absolute z-10" style={{ bottom: 4, right: "14%" }}>
-                            <Image
-                                src="/images/branding/wheel image 5.png"
-                                alt="Customer"
-                                width={80}
-                                height={80}
-                                className="rounded-xl object-cover"
-                            />
+                        {/* Bottom-right avatar */}
+                        <div className="absolute" style={{ bottom: "4%", right: "18%" }}>
+                            <PlaceholderImg src="" width={64} height={64} rounded="rounded-xl" label="Customer" />
                         </div>
                     </div>
 
