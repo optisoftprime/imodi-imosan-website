@@ -85,7 +85,7 @@ export function SalaryAdvanceFeaturesSection() {
               className="flex flex-col items-center gap-4 rounded-2xl px-6 py-8 text-center shadow-md transition hover:-translate-y-0.5 hover:shadow-lg"
               style={{ background: f.dark ? "#0a1f44" : "white" }}
             >
-              <Image src={chartImg} dark={f.dark} />
+              <Image src={chartImg} alt="" />
               <p className={`text-[13.5px] font-semibold leading-snug ${f.dark ? "text-white" : "text-[#0a1f44]"}`}>
                 {f.label}
               </p>

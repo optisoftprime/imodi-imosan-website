@@ -10,6 +10,8 @@ interface PageHeroProps {
   subtitle?: string;
   buttonText?: string;
   onButtonClick?: () => void;
+  buttonText2?: string;
+  onButtonClick2?: () => void;
   watermarkLines?: [string, string, string];
   showSlashes?: boolean;
   showSkyline?: boolean;
@@ -22,6 +24,8 @@ export function PageHero({
   subtitle = "We provide secure and flexible savings solutions designed to help you grow your money, plan for the future, and achieve your financial goals with confidence.",
   buttonText = "Start Saving Now",
   onButtonClick,
+  buttonText2,
+  onButtonClick2,
   watermarkLines = ["LOVE", "MONEY", "GROW"],
   showSlashes = true,
   showSkyline = true,
@@ -108,12 +112,22 @@ export function PageHero({
           {title}
         </h1>
         <p className="mt-6 max-w-xl text-base leading-relaxed text-blue-100 md:text-lg">{subtitle}</p>
-        <button
-          onClick={onButtonClick}
-          className="mt-10 inline-flex items-center gap-2 rounded-lg bg-white px-8 py-4 text-sm font-semibold text-[#0a1f44] shadow-lg transition hover:bg-blue-50 hover:shadow-xl"
-        >
-          {buttonText} <ChevronRight className="h-4 w-4" />
-        </button>
+        <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
+          <button
+            onClick={onButtonClick}
+            className="inline-flex items-center gap-2 rounded-lg bg-white px-8 py-4 text-sm font-semibold text-[#0a1f44] shadow-lg transition hover:bg-blue-50 hover:shadow-xl"
+          >
+            {buttonText} <ChevronRight className="h-4 w-4" />
+          </button>
+          {buttonText2 && (
+            <button
+              onClick={onButtonClick2}
+              className="inline-flex items-center gap-2 rounded-lg border-2 border-white px-8 py-4 text-sm font-semibold text-white shadow-lg transition hover:bg-white/10"
+            >
+              {buttonText2} <ChevronRight className="h-4 w-4" />
+            </button>
+          )}
+        </div>
       </div>
     </section>
   );
