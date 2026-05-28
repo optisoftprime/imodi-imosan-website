@@ -85,9 +85,9 @@ export function ReligiousFeatureSection() {
               confidence.
             </p>
           </div>
-          <button className="mt-10 inline-flex items-center gap-2 rounded-lg bg-[#1a5fd4] px-7 py-4 text-sm font-semibold text-white shadow-lg transition hover:bg-[#0d3fa8] hover:shadow-xl">
+          {/* <button className="mt-10 inline-flex items-center gap-2 rounded-lg bg-[#1a5fd4] px-7 py-4 text-sm font-semibold text-white shadow-lg transition hover:bg-[#0d3fa8] hover:shadow-xl">
             Open a Religious Account <ChevronRight className="h-4 w-4" />
-          </button>
+          </button> */}
         </div>
       </div>
     </section>

@@ -87,9 +87,9 @@ export function StartSmallSection() {
               designed to keep you focused, motivated, and in control.
             </p>
           </div>
-          <button className="mt-8 inline-flex items-center gap-2 rounded-lg bg-[#1a5fd4] px-7 py-3.5 text-sm font-semibold text-white shadow-md transition hover:bg-[#0d3fa8] hover:shadow-lg">
+          {/* <button className="mt-8 inline-flex items-center gap-2 rounded-lg bg-[#1a5fd4] px-7 py-3.5 text-sm font-semibold text-white shadow-md transition hover:bg-[#0d3fa8] hover:shadow-lg">
             Start Saving Now <ChevronRight className="h-4 w-4" />
-          </button>
+          </button> */}
         </div>
 
         {/* ── Right: two overlapping images ── */}
@@ -198,9 +198,9 @@ export function SavingsTypesSection() {
         </div>
 
         <div className="mt-14 flex justify-center">
-          <button className="inline-flex items-center gap-2 rounded-lg bg-[#1a5fd4] px-9 py-4 text-sm font-semibold text-white shadow-lg transition hover:bg-[#0d3fa8] hover:shadow-xl">
+          {/* <button className="inline-flex items-center gap-2 rounded-lg bg-[#1a5fd4] px-9 py-4 text-sm font-semibold text-white shadow-lg transition hover:bg-[#0d3fa8] hover:shadow-xl">
             Start Saving Now <ChevronRight className="h-4 w-4" />
-          </button>
+          </button> */}
         </div>
       </div>
     </section>

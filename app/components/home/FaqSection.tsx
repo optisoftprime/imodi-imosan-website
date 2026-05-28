@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { ChevronDown, ChevronUp, ChevronRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useModal } from "@/app/context/ModalContext";
 
 interface FaqItemProps {
     question: string;
@@ -38,6 +39,7 @@ const FaqItem = ({ question, answer, isOpen, onClick }: FaqItemProps) => (
 
 export default function FaqSection() {
     const [openIndex, setOpenIndex] = useState<number>(0);
+    const { openModal } = useModal();
 
     const faqs = [
         {
@@ -80,9 +82,9 @@ export default function FaqSection() {
                         Find quick solutions and helpful tips for using Imodi-Imosan Microfinance Bank. We've compiled
                         answers to the most frequently asked questions right here.
                     </p>
-                    <Link href="/contact" className="inline-flex items-center gap-2 bg-[#2a5cff] hover:bg-[#214ce0] text-white px-6 py-3.5 rounded-lg font-semibold transition text-sm hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0 w-fit">
+                    <button onClick={openModal} className="inline-flex items-center gap-2 bg-[#2a5cff] hover:bg-[#214ce0] text-white px-6 py-3.5 rounded-lg font-semibold transition text-sm hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0 w-fit">
                         Contact support <ChevronRight className="w-4 h-4" />
-                    </Link>
+                    </button>
                 </motion.div>
 
                 {/* ── RIGHT: Accordion ── */}

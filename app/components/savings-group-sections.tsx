@@ -30,12 +30,12 @@ export function SavingsGroupFeatureSection() {
             </p>
           </div>
           <div className="mt-8 flex flex-wrap gap-4">
-            <button className="inline-flex items-center gap-2 rounded-lg bg-[#1a5fd4] px-7 py-3.5 text-sm font-semibold text-white shadow-lg transition hover:bg-[#0d3fa8] hover:shadow-xl">
+            {/* <button className="inline-flex items-center gap-2 rounded-lg bg-[#1a5fd4] px-7 py-3.5 text-sm font-semibold text-white shadow-lg transition hover:bg-[#0d3fa8] hover:shadow-xl">
               Create Group <ChevronRight className="h-4 w-4" />
             </button>
             <button className="inline-flex items-center gap-2 rounded-lg border border-[#1a5fd4] bg-white px-7 py-3.5 text-sm font-semibold text-[#1a5fd4] shadow-sm transition hover:bg-blue-50">
               Join Group <ChevronRight className="h-4 w-4" />
-            </button>
+            </button> */}
           </div>
         </div>
 

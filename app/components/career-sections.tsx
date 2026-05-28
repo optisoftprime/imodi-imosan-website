@@ -30,9 +30,9 @@ export function CareerFeatureSection() {
               for individuals, businesses, and communities.
             </p>
           </div>
-          <button className="mt-8 inline-flex items-center gap-2 rounded-lg bg-[#1a5fd4] px-7 py-3.5 text-sm font-semibold text-white shadow-lg transition hover:bg-[#0d3fa8] hover:shadow-xl">
+          {/* <button className="mt-8 inline-flex items-center gap-2 rounded-lg bg-[#1a5fd4] px-7 py-3.5 text-sm font-semibold text-white shadow-lg transition hover:bg-[#0d3fa8] hover:shadow-xl">
             See Open Job Roles <ChevronRight className="h-4 w-4" />
-          </button>
+          </button> */}
         </div>
 
         {/* Right — circular photo */}
@@ -145,9 +145,9 @@ export function CareerOpenRolesSection() {
                   <p><span className="font-bold text-[#0a1f44]">Employment Type:</span> {role.type}</p>
                   <p><span className="font-bold text-[#0a1f44]">Job Description:</span> {role.description}</p>
                 </div>
-                <button onClick={openModal} className="mt-4 inline-flex w-fit items-center gap-2 rounded-lg bg-[#1a5fd4] px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-[#0d3fa8]">
+                {/* <button onClick={openModal} className="mt-4 inline-flex w-fit items-center gap-2 rounded-lg bg-[#1a5fd4] px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-[#0d3fa8]">
                   Apply Now <ChevronRight className="h-4 w-4" />
-                </button>
+                </button> */}
               </div>
             </div>
           ))}

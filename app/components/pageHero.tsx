@@ -3,6 +3,7 @@ import { ChevronRight } from "lucide-react";
 import Image, { StaticImageData } from "next/image";
 
 import savingsBg from "@/public/images/branding/Rectangle 2.png";
+import { useModal } from "@/app/context/ModalContext";
 
 interface PageHeroProps {
   backgroundImage?: StaticImageData | string;
@@ -12,6 +13,8 @@ interface PageHeroProps {
   onButtonClick?: () => void;
   buttonText2?: string;
   onButtonClick2?: () => void;
+  buttonDisabled?: boolean;
+  buttonDisabled2?: boolean;
   watermarkLines?: [string, string, string];
   showSlashes?: boolean;
   showSkyline?: boolean;
@@ -26,11 +29,14 @@ export function PageHero({
   onButtonClick,
   buttonText2,
   onButtonClick2,
+  buttonDisabled = false,
+  buttonDisabled2 = false,
   watermarkLines = ["LOVE", "MONEY", "GROW"],
   showSlashes = true,
   showSkyline = true,
   minHeight = "520px",
 }: PageHeroProps) {
+  const { openModal } = useModal();
   return (
     <section className="relative overflow-hidden" style={{ minHeight }}>
       <div className="absolute inset-0">
@@ -114,15 +120,17 @@ export function PageHero({
         <p className="mt-6 max-w-xl text-base leading-relaxed text-blue-100 md:text-lg">{subtitle}</p>
         <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
           <button
-            onClick={onButtonClick}
-            className="inline-flex items-center gap-2 rounded-lg bg-white px-8 py-4 text-sm font-semibold text-[#0a1f44] shadow-lg transition hover:bg-blue-50 hover:shadow-xl"
+            disabled={buttonDisabled}
+            onClick={onButtonClick ?? openModal}
+            className={`inline-flex items-center gap-2 rounded-lg bg-white px-8 py-4 text-sm font-semibold text-[#0a1f44] shadow-lg transition hover:bg-blue-50 hover:shadow-xl ${buttonDisabled ? "cursor-not-allowed opacity-50 hover:bg-white" : ""}`}
           >
             {buttonText} <ChevronRight className="h-4 w-4" />
           </button>
           {buttonText2 && (
             <button
-              onClick={onButtonClick2}
-              className="inline-flex items-center gap-2 rounded-lg border-2 border-white px-8 py-4 text-sm font-semibold text-white shadow-lg transition hover:bg-white/10"
+              disabled={buttonDisabled2}
+              onClick={onButtonClick2 ?? openModal}
+              className={`inline-flex items-center gap-2 rounded-lg border-2 border-white px-8 py-4 text-sm font-semibold text-white shadow-lg transition hover:bg-white/10 ${buttonDisabled2 ? "cursor-not-allowed opacity-50 hover:bg-transparent" : ""}`}
             >
               {buttonText2} <ChevronRight className="h-4 w-4" />
             </button>

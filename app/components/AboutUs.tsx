@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { useModal } from "@/app/context/ModalContext";
 
@@ -54,12 +55,12 @@ export default function AboutUs() {
                             transition={{ delay: 0.7 }}
                             className="flex flex-col sm:flex-row gap-4"
                         >
-                            <button 
-                                onClick={openModal}
-                                className="rounded-xl bg-[#114B82] text-white px-8 py-4 text-sm font-bold transition hover:bg-[#0B355E] hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0"
+                            <Link 
+                                href="/savings"
+                                className="rounded-xl bg-[#114B82] text-white px-8 py-4 text-sm font-bold transition hover:bg-[#0B355E] hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0 text-center inline-block"
                             >
                                 Read More &gt;
-                            </button>
+                            </Link>
                         </motion.div>
                     </div>
                 </motion.div>

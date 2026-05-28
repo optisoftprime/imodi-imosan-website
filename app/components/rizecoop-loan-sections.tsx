@@ -32,9 +32,9 @@ export function RizeCoopLoanFeatureSection() {
               possibilities with ease.
             </p>
           </div>
-          <button className="mt-8 inline-flex items-center gap-2 rounded-lg bg-[#1a5fd4] px-7 py-3.5 text-sm font-semibold text-white shadow-lg transition hover:bg-[#0d3fa8] hover:shadow-xl">
+          {/* <button className="mt-8 inline-flex items-center gap-2 rounded-lg bg-[#1a5fd4] px-7 py-3.5 text-sm font-semibold text-white shadow-lg transition hover:bg-[#0d3fa8] hover:shadow-xl">
             Apply for RizeCoop Loan <ChevronRight className="h-4 w-4" />
-          </button>
+          </button> */}
         </div>
 
         {/* Right — 2x2 grid */}

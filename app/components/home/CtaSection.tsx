@@ -46,12 +46,12 @@ export default function CtaSection() {
                     </p>
 
                     <div className="flex items-center gap-8">
-                        <Link href="/contact" className="text-white text-sm font-semibold hover:text-gray-300 transition flex items-center gap-1">
+                        {/* <Link href="/contact" className="text-white text-sm font-semibold hover:text-gray-300 transition flex items-center gap-1">
                             Contact Us <ChevronRight className="w-4 h-4" />
                         </Link>
                         <button onClick={openModal} className="bg-white text-[#0a1f44] text-sm font-semibold px-6 py-3 rounded-lg hover:bg-gray-100 transition shadow-lg flex items-center gap-1">
                             Open an Account <ChevronRight className="w-4 h-4" />
-                        </button>
+                        </button> */}
                     </div>
                 </motion.div>
 

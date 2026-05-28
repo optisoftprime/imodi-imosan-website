@@ -59,20 +59,20 @@ export default function BankOnTheGo() {
                     </h2>
 
                     <p className="text-white text-base sm:text-lg leading-relaxed max-w-lg mb-10">
-                        Access your banking services anytime with RizeSpring, the mobile banking app
-                        from Imodi-Imosan Microfinance Bank. Manage your accounts, make transfers,
+                        Access your banking services anytime with our mobile banking app from
+                        Imodi-Imosan Microfinance Bank. Manage your accounts, make transfers,
                         and stay connected to your finances directly from your smartphone.
                     </p>
 
-                    <div className="flex flex-col sm:flex-row items-start justify-start gap-4">
-                        <button className="flex items-center gap-3 bg-white px-5 py-2.5 rounded-lg hover:bg-gray-50 transition shadow-lg w-[190px] justify-center border border-gray-100">
+                    <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                        <button disabled className="flex items-center gap-3 bg-white opacity-50 cursor-not-allowed px-5 py-2.5 rounded-lg w-[190px] justify-center border border-gray-200">
                             <GooglePlayIcon />
                             <div className="flex flex-col items-start text-left">
                                 <span className="text-[10px] text-gray-800 font-semibold uppercase leading-none mb-0.5">GET IT ON</span>
                                 <span className="text-[17px] text-black font-bold leading-none tracking-tight">Google Play</span>
                             </div>
                         </button>
-                        <button className="flex items-center gap-3 bg-white px-5 py-2.5 rounded-lg hover:bg-gray-50 transition shadow-lg w-[190px] justify-center border border-gray-100">
+                        <button disabled className="flex items-center gap-3 bg-white opacity-50 cursor-not-allowed px-5 py-2.5 rounded-lg w-[190px] justify-center border border-gray-200">
                             <FaApple className="text-black text-[32px]" />
                             <div className="flex flex-col items-start text-left">
                                 <span className="text-[10px] text-gray-800 font-semibold leading-none mb-0.5">Download on the</span>
