@@ -438,6 +438,7 @@ interface DropdownPanelProps {
   style: "grid" | "list";
   isOpen: boolean;
   panelRef: React.RefObject<HTMLDivElement>;
+  onClose: () => void;
 }
 
 const DropdownPanel = ({
@@ -445,6 +446,7 @@ const DropdownPanel = ({
   style,
   isOpen,
   panelRef,
+  onClose,
 }: DropdownPanelProps) => (
   <div
     ref={panelRef}
@@ -465,6 +467,7 @@ const DropdownPanel = ({
             key={item.label}
             href={item.href}
             className="flex items-start gap-3 group"
+            onClick={onClose}
           >
             <span className="flex-shrink-0 w-9 h-9 flex items-center justify-center text-[#2196f3] mt-0.5">
               {item.icon}
@@ -489,6 +492,7 @@ const DropdownPanel = ({
             key={item.label}
             href={item.href}
             className="flex items-start gap-3 group"
+            onClick={onClose}
           >
             <span className="flex-shrink-0 w-9 h-9 flex items-center justify-center text-[#2196f3] mt-0.5">
               {item.icon}
@@ -581,6 +585,7 @@ const DesktopNavItem = ({
         <Link
           href={item.href ?? "#"}
           className="flex items-center px-3 h-16 text-sm font-bold text-[#1a2942] hover:text-[#2196f3] transition-colors whitespace-nowrap"
+          onClick={onClose}
         >
           {item.label}
         </Link>
@@ -604,12 +609,13 @@ const DesktopNavItem = ({
         style={item.dropdownStyle ?? "list"}
         isOpen={isOpen}
         panelRef={panelRef}
+        onClose={onClose}
       />
     </li>
   );
 };
 
-const MobileNav = ({ isOpen }: { isOpen: boolean }) => {
+const MobileNav = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) => {
   const [openSubs, setOpenSubs] = useState<Record<string, boolean>>({});
   const toggleSub = (label: string) =>
     setOpenSubs((prev) => ({ ...prev, [label]: !prev[label] }));
@@ -647,6 +653,7 @@ const MobileNav = ({ isOpen }: { isOpen: boolean }) => {
                     key={sub.label}
                     href={sub.href}
                     className="block px-10 py-2.5 text-sm font-semibold text-[#1a2942] hover:text-[#2196f3] transition-colors"
+                    onClick={onClose}
                   >
                     {sub.label}
                   </Link>
@@ -658,6 +665,7 @@ const MobileNav = ({ isOpen }: { isOpen: boolean }) => {
               key={item.label}
               href={item.href ?? "#"}
               className="px-6 py-3.5 text-sm font-bold text-[#1a2942] hover:text-[#2196f3] hover:bg-blue-50 transition-colors"
+              onClick={onClose}
             >
               {item.label}
             </Link>
@@ -674,7 +682,11 @@ export default function Navbar() {
 
   const toggle = (label: string) =>
     setOpenDropdown((prev) => (prev === label ? null : label));
-  const close = () => setOpenDropdown(null);
+
+  const handleLinkClick = () => {
+    setOpenDropdown(null);
+    setMobileOpen(false);
+  };
 
   return (
     <nav
@@ -701,7 +713,7 @@ export default function Navbar() {
               item={item}
               isOpen={openDropdown === item.label}
               onToggle={() => toggle(item.label)}
-              onClose={close}
+              onClose={handleLinkClick}
             />
           ))}
         </ul>
@@ -718,7 +730,7 @@ export default function Navbar() {
           )}
         </button>
       </div>
-      <MobileNav isOpen={mobileOpen} />
+      <MobileNav isOpen={mobileOpen} onClose={handleLinkClick} />
     </nav>
   );
 }

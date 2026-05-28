@@ -1,8 +1,10 @@
 "use client";
 import { ChevronRight } from "lucide-react";
 import Image from "next/image";
+import { useModal } from "@/app/context/ModalContext";
 
 export default function HeroSection() {
+    const { openModal } = useModal();
   return (
     <div className="relative min-h-screen overflow-hidden bg-[#eaf0fb]">
       {/* Hero */}
@@ -52,7 +54,7 @@ export default function HeroSection() {
             </p>
           </div>
 
-          <button className="mt-10 inline-flex w-fit items-center gap-2 rounded-md border border-[#0a1f44]/15 bg-white px-7 py-4 text-base font-semibold text-[#0a1f44] shadow-sm transition hover:shadow-md">
+          <button onClick={openModal} className="mt-10 inline-flex w-fit items-center gap-2 rounded-md border border-[#0a1f44]/15 bg-white px-7 py-4 text-base font-semibold text-[#0a1f44] shadow-sm transition hover:shadow-md">
             Start Growing Today <ChevronRight className="h-4 w-4" />
           </button>
         </div>

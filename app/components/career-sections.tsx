@@ -110,7 +110,10 @@ const openRoles = [
   },
 ];
 
+import { useModal } from "@/app/context/ModalContext";
+
 export function CareerOpenRolesSection() {
+  const { openModal } = useModal();
   return (
     <section className="bg-white px-8 pb-24">
       <div className="mx-auto max-w-[1200px]">
@@ -142,7 +145,7 @@ export function CareerOpenRolesSection() {
                   <p><span className="font-bold text-[#0a1f44]">Employment Type:</span> {role.type}</p>
                   <p><span className="font-bold text-[#0a1f44]">Job Description:</span> {role.description}</p>
                 </div>
-                <button className="mt-4 inline-flex w-fit items-center gap-2 rounded-lg bg-[#1a5fd4] px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-[#0d3fa8]">
+                <button onClick={openModal} className="mt-4 inline-flex w-fit items-center gap-2 rounded-lg bg-[#1a5fd4] px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-[#0d3fa8]">
                   Apply Now <ChevronRight className="h-4 w-4" />
                 </button>
               </div>
