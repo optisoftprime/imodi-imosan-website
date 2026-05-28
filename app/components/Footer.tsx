@@ -177,7 +177,7 @@ export default function Footer() {
           />
         </div>
 
-        <div className="relative z-10 mx-auto max-w-[1280px] px-6 pb-8 pt-16 sm:px-10 lg:px-12">
+        <div className="relative z-10 mx-auto max-w-[1280px] pl-2 pr-4 pb-8 pt-16 sm:pl-4 sm:pr-6 lg:pl-6 lg:pr-8">
           <div className="grid grid-cols-1 gap-14 lg:grid-cols-[1.5fr_1fr_1fr_1fr_1fr]">
             {/* Brand */}
             <div className="max-w-[340px]">

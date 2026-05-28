@@ -54,6 +54,10 @@ import "./globals.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 
+import { ModalProvider } from "./context/ModalContext";
+import { CareerModal } from "./components/ui/modal";
+import ScrollReveal from "./components/ScrollReveal";
+
 export const metadata: Metadata = {
   title: "Imodi Imosan",
   description:
@@ -68,23 +72,27 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="min-h-screen overflow-x-hidden bg-white text-black antialiased">
-        <div className="flex min-h-screen flex-col">
-          {/* Navbar */}
-          <Navbar />
+        <ModalProvider>
+            <ScrollReveal />
+            <div className="flex min-h-screen flex-col">
+            {/* Navbar */}
+            <Navbar />
 
-          {/* Main Content */}
-          <main className="flex-1">
-            <div className="relative overflow-hidden">
-              {/* Background Glow */}
-              {/* <div className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-56 bg-[#e5f8f9] blur-3xl" /> */}
-              {/* Page Content */}
-              {children}
+            {/* Main Content */}
+            <main className="flex-1">
+                <div className="relative overflow-hidden">
+                {/* Background Glow */}
+                {/* <div className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-56 bg-[#e5f8f9] blur-3xl" /> */}
+                {/* Page Content */}
+                {children}
+                </div>
+            </main>
+
+            {/* Footer */}
+            <Footer />
             </div>
-          </main>
-
-          {/* Footer */}
-          <Footer />
-        </div>
+            <CareerModal />
+        </ModalProvider>
       </body>
     </html>
   );

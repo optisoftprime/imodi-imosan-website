@@ -28,9 +28,9 @@ export function SalaryAdvanceFeatureSection() {
               control of your finances with confidence.
             </p>
           </div>
-          <button className="mt-8 inline-flex items-center gap-2 rounded-lg bg-[#1a5fd4] px-7 py-3.5 text-sm font-semibold text-white shadow-lg transition hover:bg-[#0d3fa8] hover:shadow-xl">
+          {/* <button className="mt-8 inline-flex items-center gap-2 rounded-lg bg-[#1a5fd4] px-7 py-3.5 text-sm font-semibold text-white shadow-lg transition hover:bg-[#0d3fa8] hover:shadow-xl">
             Get Salary Advance <ChevronRight className="h-4 w-4" />
-          </button>
+          </button> */}
         </div>
 
         {/* Right — person photo (cutout feel, no border-radius) */}

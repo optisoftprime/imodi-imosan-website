@@ -13,6 +13,8 @@ export default function RizeSpringPage() {
         subtitle="Manage your savings, access loans, pay bills, buy airtime and data, and stay in control of your finances — all from one simple and secure app."
         buttonText="GET IT ON Google Play"
         buttonText2="Download on the App Store"
+        buttonDisabled
+        buttonDisabled2
         showSlashes={false}
         showSkyline={false}
       />

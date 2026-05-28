@@ -1,6 +1,7 @@
 "use client";
 import { ChevronRight } from "lucide-react";
 import Image, { StaticImageData } from "next/image";
+import { useModal } from "@/app/context/ModalContext";
 
 import image27 from "@/public/images/branding/image 27.png";
 import rect5 from "@/public/images/branding/Rectangle 5.png";
@@ -106,6 +107,7 @@ export function PageCTA({
   logoIcon,
   minHeight = "400px",
 }: PageCTAProps) {
+  const { openModal } = useModal();
   return (
     <section
       className="relative overflow-hidden py-24 text-center"
@@ -148,8 +150,8 @@ export function PageCTA({
         <p className="mt-5 text-base leading-relaxed text-blue-200">{description}</p>
 
         <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
-          <button
-            onClick={onButtonClick}
+          {/* <button
+            onClick={onButtonClick ?? openModal}
             className="inline-flex items-center gap-2 rounded-lg border border-white/30 bg-transparent px-9 py-4 text-sm font-semibold text-white shadow-xl backdrop-blur-sm transition hover:bg-white/10 hover:shadow-2xl"
           >
             {buttonText} <ChevronRight className="h-4 w-4" />
@@ -157,12 +159,12 @@ export function PageCTA({
 
           {buttonText2 && (
             <button
-              onClick={onButton2Click}
+              onClick={onButton2Click ?? openModal}
               className="inline-flex items-center gap-2 rounded-lg border border-white/30 bg-transparent px-9 py-4 text-sm font-semibold text-white shadow-xl backdrop-blur-sm transition hover:bg-white/10 hover:shadow-2xl"
             >
               {buttonText2} <ChevronRight className="h-4 w-4" />
             </button>
-          )}
+          )} */}
         </div>
       </div>
     </section>

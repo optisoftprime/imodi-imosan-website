@@ -45,9 +45,9 @@ export function SmeFeatureSection() {
             We don't just bank your money. We help you multiply it, protect it, and use it to build something legendary.
           </p>
 
-          <button className="mt-8 inline-flex items-center gap-2 rounded-lg bg-[#1a5fd4] px-7 py-3.5 text-sm font-semibold text-white shadow-lg transition hover:bg-[#0d3fa8] hover:shadow-xl">
+          {/* <button className="mt-8 inline-flex items-center gap-2 rounded-lg bg-[#1a5fd4] px-7 py-3.5 text-sm font-semibold text-white shadow-lg transition hover:bg-[#0d3fa8] hover:shadow-xl">
             Open an SME Account <ChevronRight className="h-4 w-4" />
-          </button>
+          </button> */}
         </div>
 
         {/* Right — circular image */}
